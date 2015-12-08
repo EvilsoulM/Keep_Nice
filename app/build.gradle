@@ -33,4 +33,17 @@ dependencies {
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:' + rootProject.ext.leakcanary
 //    apt 'com.bluelinelabs:logansquare-compiler:' + rootProject.ext.logansquare
     compile 'com.bluelinelabs:logansquare:' + rootProject.ext.logansquare
+    //dagger2 注入
+    apt 'com.google.dagger:dagger-compiler:' + rootProject.ext.dagger
+    compile 'com.google.dagger:dagger:' + rootProject.ext.dagger
+    //UI注入
+    compile 'com.jakewharton:butterknife:' + rootProject.ext.butterknife
+    //rxjava
+    compile 'io.reactivex:rxjava:1.0.10'
+    compile 'io.reactivex:rxandroid:0.24.0'
+
+    //网络框架
+    compile 'com.squareup.retrofit:retrofit:' + rootProject.ext.retrofit
+    compile 'com.squareup.retrofit:converter-gson:' + rootProject.ext.retrofit
+    compile 'com.squareup.retrofit:adapter-rxjava:' + rootProject.ext.retrofit
 }
