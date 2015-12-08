@@ -58,6 +58,7 @@ android {
 
 dependencies {
     compile project(':common')
+    compile project(':model')
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:' + rootProject.ext.support
     compile 'com.android.support:design:' + rootProject.ext.support
@@ -65,10 +66,12 @@ dependencies {
     compile('com.squareup.okhttp:okhttp:' + rootProject.ext.okhttp) {
         exclude group: 'com.squareup.okio', module: 'okio'
     }
-    compile 'com.facebook.fresco:fresco:' + rootProject.ext.fresco
-    compile 'com.facebook.fresco:imagepipeline-okhttp:' + rootProject.ext.fresco
+    //图片加载
+    compile 'com.github.bumptech.glide:glide:' + rootProject.ext.glide
+    //leakcanary
     debugCompile 'com.squareup.leakcanary:leakcanary-android:' + rootProject.ext.leakcanary
     releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:' + rootProject.ext.leakcanary
+    //logansquare
     apt 'com.bluelinelabs:logansquare-compiler:' + rootProject.ext.logansquare
     compile 'com.bluelinelabs:logansquare:' + rootProject.ext.logansquare
     //dagger2 注入
@@ -83,6 +86,7 @@ dependencies {
     compile 'com.squareup.retrofit:retrofit:' + rootProject.ext.retrofit
     compile 'com.squareup.retrofit:converter-gson:' + rootProject.ext.retrofit
     compile 'com.squareup.retrofit:adapter-rxjava:' + rootProject.ext.retrofit
+
 }
 
 

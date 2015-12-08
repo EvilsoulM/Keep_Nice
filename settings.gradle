@@ -1,1 +1,1 @@
-include ':app', ':common', ':model', ':demain'
+include ':app', ':common', ':model', ':demain', ':modeldaogenerator'

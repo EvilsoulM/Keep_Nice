@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.0.0-alpha1'
+        classpath 'com.android.tools.build:gradle:1.2.3'
     }
 }
 
@@ -20,7 +20,7 @@ ext {
     targetSdk = 23
     support = "23.1.1"
     buildTools = "23.0.2"
-    fresco = "0.6.1"
+    glide = "3.6.0"
     okio = "1.4.0"
     okhttp = "2.4.0"
     fabric = "2.4.0"
@@ -29,7 +29,8 @@ ext {
     dagger = "2.0.1"
     packageName = "com.evilsoulm.keep_nice"
     butterknife = "7.0.1"
-    retrofit="2.0.0-beta2"
+    retrofit = "2.0.0-beta2"
+    greendao = "2.0.0"
 }
 
 task clean(type: Delete) {
