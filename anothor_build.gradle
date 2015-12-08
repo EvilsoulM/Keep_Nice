@@ -121,6 +121,5 @@ configure(project(':app').subprojects) {//相当于放在app下的build.gradle
         compile 'com.squareup.retrofit:retrofit:' + rootProject.ext.retrofit
         compile 'com.squareup.retrofit:converter-gson:' + rootProject.ext.retrofit
         compile 'com.squareup.retrofit:adapter-rxjava:' + rootProject.ext.retrofit
-
     }
 }
