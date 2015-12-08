@@ -1,0 +1,36 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion project["compileSdk"]
+    buildToolsVersion project["buildTools"]
+
+    defaultConfig {
+        applicationId "com.evilsoulm.keep_nice"
+        minSdkVersion project["minSdk"]
+        targetSdkVersion project["targetSdk"]
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:' + project["support"]
+    compile 'com.android.support:design:' + project["support"]
+    compile 'com.squareup.okio:okio:' + project["okio"]
+    compile('com.squareup.okhttp:okhttp:' + project["okhttp"]) {
+        exclude group: 'com.squareup.okio', module: 'okio'
+    }
+    compile 'com.facebook.fresco:fresco:' + project["fresco"]
+    compile 'com.facebook.fresco:imagepipeline-okhttp:' + project["fresco"]
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:' + project["leakcanary"]
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:' + project["leakcanary"]
+    apt 'com.bluelinelabs:logansquare-compiler:' + project["logansquare"]
+    compile 'com.bluelinelabs:logansquare:' + project["logansquare"]
+}
