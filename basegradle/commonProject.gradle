@@ -1,0 +1,6 @@
+repositories {
+    mavenCentral()
+}
+apply plugin: 'jacoco'
+apply plugin: 'findbugs'
+apply plugin: 'checkstyle'

@@ -1,12 +1,9 @@
 apply plugin: 'com.android.library'
+apply from: rootProject.file('basegradle/commonProject.gradle')
+apply from: rootProject.file('basegradle/commonAndroid.gradle')
 
 android {
-    compileSdkVersion rootProject.ext.compileSdk
-    buildToolsVersion rootProject.ext.buildTools
-
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdk
-        targetSdkVersion rootProject.ext.targetSdk
         versionCode 1
         versionName "1.0"
     }

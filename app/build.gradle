@@ -1,26 +1,25 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
+apply from: rootProject.file('basegradle/commonProject.gradle')
+apply from: rootProject.file('basegradle/commonAndroid.gradle')
 
 buildscript {
     repositories {
         mavenCentral()
     }
+
     dependencies {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
     }
 }
 
 android {
-    compileSdkVersion rootProject.ext.compileSdk
-    buildToolsVersion rootProject.ext.buildTools
-
     defaultConfig {
         applicationId rootProject.ext.packageName
-        minSdkVersion rootProject.ext.minSdk
-        targetSdkVersion rootProject.ext.targetSdk
         versionCode 1
         versionName "1.0"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -57,3 +56,5 @@ dependencies {
     compile 'com.squareup.retrofit:converter-gson:' + rootProject.ext.retrofit
     compile 'com.squareup.retrofit:adapter-rxjava:' + rootProject.ext.retrofit
 }
+
+
