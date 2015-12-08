@@ -3,11 +3,13 @@
     package="com.evilsoulm.keep_nice">
 
     <application
+        android:name=".KeepApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
