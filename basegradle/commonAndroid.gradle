@@ -13,6 +13,10 @@ android {
     }
 
     dexOptions {
+        javaMaxHeapSize "2048m"
+    }
+
+    dexOptions {
         preDexLibraries project.hasProperty('debug')
         incremental project.hasProperty('debug')
     }

@@ -21,9 +21,37 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
+            debuggable true
+            jniDebuggable true
+        }
+
+        release {
+            minifyEnabled true
+            shrinkResources false
+
+            debuggable false
+            jniDebuggable false
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    configurations {
+        all*.exclude group: 'com.google.android', module: 'android'
+        all*.exclude group: 'com.google.android', module: 'support-v4'
+        all*.exclude group: 'asm', module: 'asm'
+        all*.exclude group: 'com.google.code.gson'
+    }
+
+
+    productFlavors {
+        normal {
+
+        }
+
+        ddebug {
         }
     }
 }

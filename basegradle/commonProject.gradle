@@ -4,3 +4,4 @@ repositories {
 apply plugin: 'jacoco'
 apply plugin: 'findbugs'
 apply plugin: 'checkstyle'
+apply plugin: "pmd"

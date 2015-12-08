@@ -1,0 +1,12 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.evilsoulm.keep_nice">
+
+    <application
+        android:name=".KeepDebugApplication"
+        android:allowBackup="false"
+        tools:replace="name,allowBackup">
+
+    </application>
+
+</manifest>
