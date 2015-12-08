@@ -1,8 +1,7 @@
 # Keep_Nice 
 ================
 
-练习练习～
-
+##结构
 - 1.app-上层业务 
 - 2.common - 公用模块 工具类 只有app依赖 
 - 3.model －为上层提供model greendao生成 只有app依赖 
