@@ -10,6 +10,7 @@
 - 网络->retrofit+okhttp
 - 解析->logansquare
 - 注入 dagger2 比guice性能更好
+- 数据库 greendao 简单高效 维护方便
 
 所有模块都单项引用，方便后续拆包
 
