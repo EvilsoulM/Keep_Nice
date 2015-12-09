@@ -1,1 +1,1 @@
-include ':app', ':common', ':model', ':modeldaogenerator'
+include ':app', ':common', ':model', ':modeldaogenerator', ':anrwatchdog'
