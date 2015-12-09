@@ -1,5 +1,5 @@
 
-##结构
+## 结构
 - 1.app-上层业务 
 - 2.common - 公用模块 工具类 只有app依赖 
 - 3.model －为上层提供model greendao生成 只有app依赖 
@@ -16,8 +16,8 @@
 ##练习
 - groovy简单使用 - info.groovy
 - gradle使用
-  const.gradle 统一管理版本和依赖库
-  commonAndroid.gradle 共用android模块
-  commonProject.gradle  项目共用模块
-  utils.gradle 工具方法
+  - const.gradle 统一管理版本和依赖库
+  - commonAndroid.gradle 共用android模块
+  - commonProject.gradle  项目共用模块
+  - utils.gradle 工具方法
 
