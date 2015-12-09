@@ -1,10 +1,10 @@
 android {
-    compileSdkVersion rootProject.ext.compileSdk
-    buildToolsVersion rootProject.ext.buildTools
+    compileSdkVersion rootProject.ext.android_const.compileSdk
+    buildToolsVersion rootProject.ext.android_const.buildTools
 
     defaultConfig {
-        minSdkVersion rootProject.ext.minSdk
-        targetSdkVersion rootProject.ext.targetSdk
+        minSdkVersion rootProject.ext.android_const.minSdk
+        targetSdkVersion rootProject.ext.android_const.targetSdk
     }
 
     compileOptions {

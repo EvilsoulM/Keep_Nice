@@ -1,6 +1,6 @@
 apply plugin: 'java'
 
 dependencies {
-    compile 'de.greenrobot:greendao:' + rootProject.ext.greendao
-    compile(group: 'com.google.android', name: 'android', version: '4.1.1.4')
+    compile rootProject.ext.model_dep.greendao
+    compile rootProject.ext.model_dep.android
 }

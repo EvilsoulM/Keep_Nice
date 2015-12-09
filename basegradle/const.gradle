@@ -1,0 +1,54 @@
+ext {
+    android_const = [
+            compileSdk : 23,
+            minSdk     : 11,
+            targetSdk  : 23,
+            support    : "23.1.1",
+            buildTools : "23.0.2",
+            packageName: "com.evilsoulm.keep_nice"
+    ]
+
+    dep_const = [
+            glide      : "3.6.0",
+            okio       : "1.4.0",
+            okhttp     : "2.4.0",
+            fabric     : "2.4.0",
+            leakcanary : "1.3.1",
+            logansquare: "1.1.0",
+            dagger     : "2.0.1",
+            butterknife: "7.0.1",
+            retrofit   : "2.0.0-beta2",
+            greendao   : "2.0.0"
+    ]
+
+    app_dep = [
+            "appcompat-v7"      : 'com.android.support:appcompat-v7:' + android_const.support,
+            "design"            : 'com.android.support:design:' + android_const.support,
+            "okio"              : 'com.squareup.okio:okio:' + dep_const.okio,
+            "okhttp"            : 'com.squareup.okhttp:okhttp:' + dep_const.okhttp,
+            "glide"             : 'com.github.bumptech.glide:glide:' + dep_const.glide,
+            "debug_leakcanary"  : 'com.squareup.leakcanary:leakcanary-android:' + dep_const.leakcanary,
+            "release_leakcanary": 'com.squareup.leakcanary:leakcanary-android-no-op:' + dep_const.leakcanary,
+            "glide"             : 'com.github.bumptech.glide:glide:' + dep_const.glide,
+            "apt_logansquare"   : 'com.bluelinelabs:logansquare-compiler:' + dep_const.logansquare,
+            "logansquare"       : 'com.bluelinelabs:logansquare:' + dep_const.logansquare,
+            "apt_dagger"        : 'com.google.dagger:dagger-compiler:' + dep_const.dagger,
+            "dagger"            : 'com.google.dagger:dagger:' + dep_const.dagger,
+            "butterknife"       : 'com.jakewharton:butterknife:' + dep_const.butterknife,
+            "rxjava"            : 'io.reactivex:rxjava:1.0.10',
+            "rxandroid"         : 'io.reactivex:rxandroid:0.24.0',
+            "retrofit"          : 'com.squareup.retrofit:retrofit:' + dep_const.retrofit,
+            "converter-gson"    : 'com.squareup.retrofit:converter-gson:' + dep_const.retrofit,
+            "adapter-rxjava"    : 'com.squareup.retrofit:adapter-rxjava:' + dep_const.retrofit
+    ]
+
+    model_generator_dep = [
+            "greendao-generator": 'de.greenrobot:greendao-generator:' + dep_const.greendao
+    ]
+
+    model_dep = [
+            "greendao": 'de.greenrobot:greendao:' + dep_const.greendao,
+            "android" : 'com.google.android:android:4.1.1.4'
+    ]
+
+}
