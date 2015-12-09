@@ -60,33 +60,25 @@ dependencies {
     compile project(':common')
     compile project(':model')
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:' + rootProject.ext.android_const.support
-    compile 'com.android.support:design:' + rootProject.ext.android_const.support
-    compile 'com.squareup.okio:okio:' + rootProject.ext.dep_const.okio
-    compile('com.squareup.okhttp:okhttp:' + rootProject.ext.dep_const.okhttp) {
+    compile rootProject.ext.app_dep.appcompat_v7
+    compile rootProject.ext.app_dep.design
+    compile rootProject.ext.app_dep.okio
+    compile(rootProject.ext.app_dep.okhttp) {
         exclude group: 'com.squareup.okio', module: 'okio'
     }
-    //图片加载
-    compile 'com.github.bumptech.glide:glide:' + rootProject.ext.dep_const.glide
-    //leakcanary
-    debugCompile 'com.squareup.leakcanary:leakcanary-android:' + rootProject.ext.dep_const.leakcanary
-    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:' + rootProject.ext.dep_const.leakcanary
-    //logansquare
-    apt 'com.bluelinelabs:logansquare-compiler:' + rootProject.ext.dep_const.logansquare
-    compile 'com.bluelinelabs:logansquare:' + rootProject.ext.dep_const.logansquare
-    //dagger2 注入
-    apt 'com.google.dagger:dagger-compiler:' + rootProject.ext.dep_const.dagger
-    compile 'com.google.dagger:dagger:' + rootProject.ext.dep_const.dagger
-    //UI注入
-    compile 'com.jakewharton:butterknife:' + rootProject.ext.dep_const.butterknife
-    //rxjava
-    compile 'io.reactivex:rxjava:1.0.10'
-    compile 'io.reactivex:rxandroid:0.24.0'
-    //网络框架
-    compile 'com.squareup.retrofit:retrofit:' + rootProject.ext.dep_const.retrofit
-    compile 'com.squareup.retrofit:converter-gson:' + rootProject.ext.dep_const.retrofit
-    compile 'com.squareup.retrofit:adapter-rxjava:' + rootProject.ext.dep_const.retrofit
-
+    compile rootProject.ext.app_dep.glide
+    debugCompile rootProject.ext.app_dep.debug_leakcanary
+    releaseCompile rootProject.ext.app_dep.release_leakcanary
+    apt rootProject.ext.app_dep.apt_logansquare
+    compile rootProject.ext.app_dep.logansquare
+    apt rootProject.ext.app_dep.apt_dagger
+    compile rootProject.ext.app_dep.dagger
+    compile rootProject.ext.app_dep.butterknife
+    compile rootProject.ext.app_dep.rxjava
+    compile rootProject.ext.app_dep.rxandroid
+    compile rootProject.ext.app_dep.retrofit
+    compile rootProject.ext.app_dep.converter_gson
+    compile rootProject.ext.app_dep.adapter_rxjava
 }
 
 

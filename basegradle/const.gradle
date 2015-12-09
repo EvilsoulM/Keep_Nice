@@ -22,11 +22,10 @@ ext {
     ]
 
     app_dep = [
-            "appcompat-v7"      : 'com.android.support:appcompat-v7:' + android_const.support,
+            "appcompat_v7"      : 'com.android.support:appcompat-v7:' + android_const.support,
             "design"            : 'com.android.support:design:' + android_const.support,
             "okio"              : 'com.squareup.okio:okio:' + dep_const.okio,
             "okhttp"            : 'com.squareup.okhttp:okhttp:' + dep_const.okhttp,
-            "glide"             : 'com.github.bumptech.glide:glide:' + dep_const.glide,
             "debug_leakcanary"  : 'com.squareup.leakcanary:leakcanary-android:' + dep_const.leakcanary,
             "release_leakcanary": 'com.squareup.leakcanary:leakcanary-android-no-op:' + dep_const.leakcanary,
             "glide"             : 'com.github.bumptech.glide:glide:' + dep_const.glide,
@@ -38,8 +37,8 @@ ext {
             "rxjava"            : 'io.reactivex:rxjava:1.0.10',
             "rxandroid"         : 'io.reactivex:rxandroid:0.24.0',
             "retrofit"          : 'com.squareup.retrofit:retrofit:' + dep_const.retrofit,
-            "converter-gson"    : 'com.squareup.retrofit:converter-gson:' + dep_const.retrofit,
-            "adapter-rxjava"    : 'com.squareup.retrofit:adapter-rxjava:' + dep_const.retrofit
+            "converter_gson"    : 'com.squareup.retrofit:converter-gson:' + dep_const.retrofit,
+            "adapter_rxjava"    : 'com.squareup.retrofit:adapter-rxjava:' + dep_const.retrofit
     ]
 
     model_generator_dep = [
