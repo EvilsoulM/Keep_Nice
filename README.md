@@ -21,3 +21,5 @@
   - commonProject.gradle  项目共用模块
   - utils.gradle 工具方法
 
+- 优化anrwatchdog
+
