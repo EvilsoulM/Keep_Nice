@@ -16,3 +16,8 @@
 ##练习
 - groovy简单使用 - info.groovy
 - gradle使用
+  const.gradle 统一管理版本和依赖库
+  commonAndroid.gradle 共用android模块
+  commonProject.gradle  项目共用模块
+  utils.gradle 工具方法
+
