@@ -53,42 +53,6 @@ android {
     }
 
     (android.hasProperty('applicationVariants') ? android.'applicationVariants' : android.'libraryVariants').all { variant ->
-        task("pmd${variant.name.capitalize()}", type: Pmd, dependsOn: "assemble${variant.name.capitalize()}") {
-            group 'Reporting'
-            description "Generate ${variant.name.capitalize()} Pmd reports."
-
-            ignoreFailures = true
-            reports {
-                xml.enabled = true
-                html.enabled = true
-            }
-
-            source = files(variant.javaCompiler.source)
-            classpath = files(configurations.compile.files)
-        }
-
-        task("jacoco${variant.name.capitalize()}Report", type: JacocoReport, dependsOn: "test${variant.name.capitalize()}UnitTest") {
-            group 'Reporting'
-            description "Generate ${variant.name.capitalize()} Jacoco coverage reports."
-
-            reports {
-                xml.enabled = true
-                html.enabled = true
-            }
-
-            // variant.javaCompile.source does not work
-            // traverses from starting point
-            sourceDirectories = files(android.sourceSets.main.java.srcDirs)
-            executionData = files("${buildDir}/jacoco/test${variant.name.capitalize()}UnitTest.exec")
-            classDirectories = fileTree(
-                    dir: variant.javaCompiler.destinationDir,
-                    excludes: ['**/R.class',
-                               '**/R$*.class',
-                               '**/Manifest*.*',
-                               'android/**/*.*',
-                               '**/BuildConfig.*'])
-        }
-
         task("findbugs${variant.name.capitalize()}", type: FindBugs, dependsOn: "assemble${variant.name.capitalize()}") {
             group 'Reporting'
             description "Generate ${variant.name.capitalize()} Findbugs reports."
