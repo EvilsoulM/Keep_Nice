@@ -9,11 +9,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.evilsoulm.common.Utils.LogUtils;
 import com.evilsoulm.common.annotation.MethodTime;
 
 public class MainActivity extends AppCompatActivity {
 
-    @MethodTime
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,28 +29,30 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        init("name->EvilsoulM");
     }
 
     @MethodTime
+    private void init(String args) {
+        LogUtils.log("init() called with: " + args);
+    }
+
     @Override
     protected void onResume() {
         super.onResume();
     }
 
-    @MethodTime
     @Override
     protected void onStart() {
         super.onStart();
     }
 
-    @MethodTime
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
-    @MethodTime
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
