@@ -54,12 +54,14 @@ public class MethodTimeAspect {
 
     @Before(POINTCUT_NAME)
     public void beforeJoinPoint(JoinPoint joinPoint) throws Throwable {
-//        LogUtils.log("beforeJoinPoint() called with: " + "joinPoint = [" + joinPoint + "]");
+        //hook before
+        //LogUtils.log("beforeJoinPoint() called with: " + "joinPoint = [" + joinPoint + "]");
 
     }
 
     @After(POINTCUT_NAME)
     public void afterJoinPoint(JoinPoint joinPoint) throws Throwable {
-//        LogUtils.log("afterJoinPoint() called with: " + "joinPoint = [" + joinPoint + "]");
+        //hook after
+        //LogUtils.log("afterJoinPoint() called with: " + "joinPoint = [" + joinPoint + "]");
     }
 }
