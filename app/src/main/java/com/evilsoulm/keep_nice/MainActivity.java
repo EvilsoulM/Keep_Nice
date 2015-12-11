@@ -9,10 +9,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.evilsoulm.common.Utils.ImageLoader;
 import com.evilsoulm.common.Utils.LogUtils;
 import com.evilsoulm.common.annotation.MethodTime;
 
 public class MainActivity extends AppCompatActivity {
+    private static final String URL = "api.maoyan.com";
+    private static final int ERROR_ID = 0x11;
+    private static final int PLACE_HOLDER_ID = 0x12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         init("name->EvilsoulM");
+
+        ImageLoader.loadImage("");
+        ImageLoader.loadImage("", ERROR_ID);
+        ImageLoader.loadImage("", ERROR_ID, PLACE_HOLDER_ID);
+        ImageLoader.loadImage("", ERROR_ID, true);
+        ImageLoader.loadImage(URL, false);
+        ImageLoader.loadImage(URL, false, PLACE_HOLDER_ID);
     }
 
     @MethodTime
