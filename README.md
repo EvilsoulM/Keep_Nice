@@ -24,3 +24,6 @@
 
 - 优化anrwatchdog
 - aspect使用
+
+- 微信资源混淆
+因为是在assemble.doLast 做的资源混淆如果同时在这个时候执行拆包操作的化可能会丢失dex 注意～
