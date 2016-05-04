@@ -29,6 +29,7 @@ public class KeepApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        initializeInjector();
         initApplication();
     }
 
@@ -60,7 +61,6 @@ public class KeepApplication extends Application {
     @Override
     public void onTerminate() {
         super.onTerminate();
-        initializeInjector();
         if (mBaseApplication != null) {
             mBaseApplication.onTerminate();
         }
