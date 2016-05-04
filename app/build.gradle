@@ -3,6 +3,7 @@ apply plugin: 'com.neenbedankt.android-apt'
 apply from: rootProject.file('basegradle/commonProject.gradle')
 apply from: rootProject.file('basegradle/commonAndroid.gradle')
 apply plugin: 'me.tatarka.retrolambda'
+apply from: file('plugin.gradle')
 
 buildscript {
     repositories {
@@ -56,27 +57,6 @@ android {
         ddebug {
         }
     }
-
-    android.applicationVariants.all { variant ->
-        variant.assemble.doLast {
-            String outname = "";
-            variant.productFlavors.each { productFlavor ->
-                println("productFlavor:" + productFlavor.name);
-                outname += productFlavor.name;
-            }
-
-            println("buildType:" + variant.buildType.name);
-            if (variant.buildType.name != 'release') { //是正式版本才进行资源混淆//"debug"
-                return;
-            }
-
-            variant.outputs.each { output ->
-                //注释以下一行可以取消自动资源混淆的方法
-                runResourceGuard(output.outputFile, outname);
-            }
-
-        }
-    }
 }
 
 dependencies {
@@ -103,6 +83,7 @@ dependencies {
     compile rootProject.ext.app_dep.adapter_rxjava
     compile 'org.aspectj:aspectjrt:1.8.1'
 }
+
 
 import org.aspectj.bridge.IMessage
 import org.aspectj.bridge.MessageHandler
@@ -149,107 +130,5 @@ variants.all { variant ->
                     break;
             }
         }
-    }
-}
-
-/**微信资源混淆 task 如果不用就注销掉 上面的调用**/
-void runResourceGuard(File outFile, String outName) {
-    String finalOutDir = outFile.getParentFile().getAbsolutePath();
-
-    String name = getFileNameWithoutExt(outFile.getName());
-    if (outName == null || "".equals(outName)) {
-        outName = name;
-    }
-    String outDirPath = "build/outputs/resguard/" + outName;
-
-    println("输出目录:" + outDirPath);
-
-    File outDir = file(outDirPath);
-    if (outDir.exists()) {
-        delete(outDir.getAbsolutePath());
-    }
-    outDir.mkdirs();
-
-    //读取签名信息
-    String storeFile = "keystore/xxxxx.keystore"
-    String storePassword = "xxxx"
-    String keyAlias = "xxxx"
-    String keyPassword = "xxx"
-
-    String commandExt = "";
-
-    String zipalignPath = android.getSdkDirectory().getAbsolutePath() + "/build-tools/" + android.buildToolsVersion + "/zipalign" + commandExt;
-
-    println("zipalignPath=" + zipalignPath);
-
-    //执行资源混淆方法
-    def exit = javaexec {
-        main = "-jar"
-        args = [
-                "../resources/AndResGuard/resourcesproguard.jar",
-                outFile.getAbsolutePath(),
-                "-out", outDirPath,
-                "-7zip", "../resources/command/7za" + commandExt,
-                "-zipalign", zipalignPath,
-                "-mapping", "../resources/AndResGuard/resource_mapping.txt"
-//                "-signature", storeFile, storePassword, keyPassword, keyAlias
-        ].toList()
-    }
-
-    println("运行结果:" + exit);
-    if (exit.exitValue != 0) {
-        return;
-    }
-
-    //将混淆后apk包替换原来的apk包
-    name += "_signed_aligned.apk";
-    File outApkFile = new File(outDir, name);
-
-    outFile.delete();
-    if (!outApkFile.exists()) {
-        println("资源混淆文件失败！删除原文件！");
-    } else {
-        //自定义输出的文件名
-        String orginalName = outFile.toString().subSequence(0, outFile.toString().indexOf(".apk"));
-        String outputname = orginalName + "_recompressed";
-
-        println("成功:" + outputname);
-        String tempExt = "";
-
-        int count = 0;
-        while (true) {
-            File temp = new File(finalOutDir, outputname + tempExt + ".apk");
-            if (!temp.exists()) {
-                break;
-            }
-            tempExt = "(" + (++count) + ")";
-        }
-
-        outputname += tempExt + ".apk";
-
-        println("最终文件名为:" + outputname);
-
-        copy {
-            from(outDirPath) {
-                include name
-            }
-            into finalOutDir
-            rename(name, outputname)
-        }
-    }
-}
-
-String getFileNameWithoutExt(String filePath) {
-    if (filePath == null || "".equals(filePath)) {
-        return null;
-    }
-    int last = filePath.lastIndexOf("/");
-    int index = filePath.lastIndexOf(".");
-    if (last == -1 && index == -1) {
-        return filePath;
-    } else if (index > last) {
-        return filePath.substring(last + 1, index);
-    } else {
-        return filePath.substring(last);
     }
 }
