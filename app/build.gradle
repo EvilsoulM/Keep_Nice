@@ -2,6 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply from: rootProject.file('basegradle/commonProject.gradle')
 apply from: rootProject.file('basegradle/commonAndroid.gradle')
+apply plugin: 'me.tatarka.retrolambda'
 
 buildscript {
     repositories {
@@ -95,7 +96,6 @@ dependencies {
     compile rootProject.ext.app_dep.logansquare
     apt rootProject.ext.app_dep.apt_dagger
     compile rootProject.ext.app_dep.dagger
-    compile rootProject.ext.app_dep.butterknife
     compile rootProject.ext.app_dep.rxjava
     compile rootProject.ext.app_dep.rxandroid
     compile rootProject.ext.app_dep.retrofit
