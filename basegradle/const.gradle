@@ -1,7 +1,7 @@
 ext {
     android_const = [
             compileSdk : 23,
-            minSdk     : 11,
+            minSdk     : 16,
             targetSdk  : 23,
             support    : "23.1.1",
             buildTools : "23.0.2",

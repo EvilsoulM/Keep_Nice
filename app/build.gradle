@@ -76,11 +76,9 @@ dependencies {
     compile rootProject.ext.app_dep.logansquare
     apt rootProject.ext.app_dep.apt_dagger
     compile rootProject.ext.app_dep.dagger
+
     compile rootProject.ext.app_dep.rxjava
     compile rootProject.ext.app_dep.rxandroid
-    compile rootProject.ext.app_dep.retrofit
-    compile rootProject.ext.app_dep.converter_gson
-    compile rootProject.ext.app_dep.adapter_rxjava
     compile 'org.aspectj:aspectjrt:1.8.1'
 }
 

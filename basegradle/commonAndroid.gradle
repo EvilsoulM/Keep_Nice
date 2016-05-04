@@ -51,44 +51,4 @@ android {
         warningsAsErrors true
         disable 'PrivateResource' // Use AppCompat resources
     }
-
-    (android.hasProperty('applicationVariants') ? android.'applicationVariants' : android.'libraryVariants').all { variant ->
-        task("findbugs${variant.name.capitalize()}", type: FindBugs, dependsOn: "assemble${variant.name.capitalize()}") {
-            group 'Reporting'
-            description "Generate ${variant.name.capitalize()} Findbugs reports."
-
-            ignoreFailures = true
-            reports {
-                xml.enabled = false
-                html.enabled = true
-            }
-
-            effort = 'max'
-            reportLevel = 'low'
-            source = files(variant.javaCompiler.source)
-            classpath = files(configurations.compile.files)
-            classes = fileTree(
-                    dir: variant.javaCompile.destinationDir,
-                    excludes: ['**/R.class',
-                               '**/R$*.class',
-                               '**/Manifest*.*',
-                               'android/**/*.*',
-                               '**/BuildConfig.*'])
-        }
-
-        task("checkstyle${variant.name.capitalize()}", type: Checkstyle, dependsOn: "assemble${variant.name.capitalize()}") {
-            group 'Reporting'
-            description "Generate ${variant.name.capitalize()} Checkstyle reports."
-
-            ignoreFailures = true
-            // TODO generate HTML, 'reports.html' is not available
-            reports {
-                xml.enabled = true
-            }
-
-            configFile = rootProject.file('gradle/checkstyle-hard.xml')
-            source = files(android.sourceSets.main.java.srcDirs)
-            classpath = files(configurations.compile.files)
-        }
-    }
 }

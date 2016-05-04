@@ -1,7 +1,13 @@
-apply plugin: 'java'
+apply plugin: 'com.android.library'
+apply from: rootProject.file('basegradle/commonProject.gradle')
+apply from: rootProject.file('basegradle/commonAndroid.gradle')
 apply plugin: 'me.tatarka.retrolambda'
 
 dependencies {
     compile rootProject.ext.model_dep.greendao
     compile rootProject.ext.model_dep.android
+
+    compile rootProject.ext.app_dep.retrofit
+    compile rootProject.ext.app_dep.converter_gson
+    compile rootProject.ext.app_dep.adapter_rxjava
 }
