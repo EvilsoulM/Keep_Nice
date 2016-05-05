@@ -9,14 +9,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.evilsoulm.common.Utils.ImageLoader;
-import com.evilsoulm.common.Utils.LogUtils;
-import com.evilsoulm.common.annotation.MethodTime;
+import com.evilsoulm.keep_nice.domain.NewsUseCaseImp;
+import com.evilsoulm.keep_nice.model.dao.entity.CollectionResponse;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
-    private static final String URL = "api.maoyan.com";
-    private static final int ERROR_ID = 0x11;
-    private static final int PLACE_HOLDER_ID = 0x12;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,29 +33,18 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        init("name->EvilsoulM");
+        NewsUseCaseImp useCaseImp = new NewsUseCaseImp();
+        useCaseImp.requestlastestNews(new Callback<CollectionResponse>() {
+            @Override
+            public void onResponse(Call<CollectionResponse> call, Response<CollectionResponse> response) {
 
-        ImageLoader.loadImage("");
-        ImageLoader.loadImage("", ERROR_ID);
-        ImageLoader.loadImage("", ERROR_ID, PLACE_HOLDER_ID);
-        ImageLoader.loadImage("", ERROR_ID, true);
-        ImageLoader.loadImage(URL, false);
-        ImageLoader.loadImage(URL, false, PLACE_HOLDER_ID);
-    }
+            }
 
-    @MethodTime
-    private void init(String args) {
-        LogUtils.log("init() called with: " + args);
-    }
+            @Override
+            public void onFailure(Call<CollectionResponse> call, Throwable t) {
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
+            }
+        });
     }
 
     @Override

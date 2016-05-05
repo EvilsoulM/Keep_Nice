@@ -61,7 +61,7 @@ android {
 
 dependencies {
     compile project(':common')
-    compile project(':model')
+    compile project(':domain')
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile rootProject.ext.app_dep.appcompat_v7
     compile rootProject.ext.app_dep.design
@@ -77,8 +77,6 @@ dependencies {
     apt rootProject.ext.app_dep.apt_dagger
     compile rootProject.ext.app_dep.dagger
 
-    compile rootProject.ext.app_dep.rxjava
-    compile rootProject.ext.app_dep.rxandroid
     compile 'org.aspectj:aspectjrt:1.8.1'
 }
 

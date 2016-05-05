@@ -10,4 +10,8 @@ dependencies {
     compile rootProject.ext.app_dep.retrofit
     compile rootProject.ext.app_dep.converter_gson
     compile rootProject.ext.app_dep.adapter_rxjava
+
+    compile rootProject.ext.app_dep.rxjava
+    compile rootProject.ext.app_dep.rxandroid
+    compile 'com.google.code.gson:gson:2.6.2'
 }

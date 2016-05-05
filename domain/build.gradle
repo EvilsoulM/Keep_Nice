@@ -1,0 +1,10 @@
+apply plugin: 'com.android.library'
+apply from: rootProject.file('basegradle/commonProject.gradle')
+apply from: rootProject.file('basegradle/commonAndroid.gradle')
+apply plugin: 'me.tatarka.retrolambda'
+
+
+dependencies {
+    compile project(':model')
+}
+

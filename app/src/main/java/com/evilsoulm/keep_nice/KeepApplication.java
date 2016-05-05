@@ -23,12 +23,18 @@ import java.util.List;
  */
 public class KeepApplication extends Application {
     private static final List<String> PROCESS_NAME_UI = Collections.singletonList("com.evilsoulm.keep_nice");
+    private static KeepApplication application;
     private BaseApplication mBaseApplication;
     private ApplicationComponent applicationComponent;
+
+    public static KeepApplication getApplication() {
+        return application;
+    }
 
     @Override
     public void onCreate() {
         super.onCreate();
+        application = this;
         initializeInjector();
         initApplication();
     }
@@ -40,6 +46,7 @@ public class KeepApplication extends Application {
         } else {
             mBaseApplication = new KeepSecondProcessApplication(this);
         }
+        mBaseApplication.onCreate();
     }
 
     @Override
