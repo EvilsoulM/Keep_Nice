@@ -7,5 +7,5 @@ package com.evilsoulm.keep_nice.model.dao.restapi;
  * Detail:
  */
 public interface ApiConst {
-    String BASE_URL = "http://news-at.zhihu.com/api/4";
+    String BASE_URL = "http://news-at.zhihu.com/";
 }

@@ -3,7 +3,7 @@ package com.evilsoulm.keep_nice.net;
 import android.util.Log;
 
 import com.evilsoulm.common.Utils.NetUtils;
-import com.evilsoulm.keep_nice.KeepApplication;
+import com.evilsoulm.keep_nice.common.KeepApplication;
 
 import java.io.IOException;
 

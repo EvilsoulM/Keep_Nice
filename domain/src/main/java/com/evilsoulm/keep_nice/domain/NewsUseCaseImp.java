@@ -1,11 +1,11 @@
 package com.evilsoulm.keep_nice.domain;
 
 import com.evilsoulm.keep_nice.domain.base.BaseUseCase;
-import com.evilsoulm.keep_nice.model.dao.entity.CollectionResponse;
+import com.evilsoulm.keep_nice.model.dao.entity.LastestNewsResponse;
 import com.evilsoulm.keep_nice.model.dao.restapi.service.NewsDataPrvdr;
 
-import retrofit2.Call;
 import retrofit2.Callback;
+import rx.Observable;
 
 /**
  * Author by mazixuan
@@ -16,10 +16,8 @@ import retrofit2.Callback;
 public class NewsUseCaseImp extends BaseUseCase<NewsDataPrvdr> implements NewsUseCase {
 
     @Override
-    public Call requestlastestNews(Callback<CollectionResponse> callback) {
-        Call<CollectionResponse> call = prvdr.getLastestNews();
-        call.enqueue(callback);
-        return call;
+    public Observable requestlastestNews(Callback<LastestNewsResponse> callback) {
+        return prvdr.getLastestNews();
     }
 
     @Override

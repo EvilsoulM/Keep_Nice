@@ -1,9 +1,9 @@
 package com.evilsoulm.keep_nice.domain;
 
-import com.evilsoulm.keep_nice.model.dao.entity.CollectionResponse;
+import com.evilsoulm.keep_nice.model.dao.entity.LastestNewsResponse;
 
-import retrofit2.Call;
 import retrofit2.Callback;
+import rx.Observable;
 
 /**
  * Author by mazixuan
@@ -12,5 +12,5 @@ import retrofit2.Callback;
  * Detail:
  */
 public interface NewsUseCase {
-    Call requestlastestNews(Callback<CollectionResponse> callback);
+    Observable requestlastestNews(Callback<LastestNewsResponse> callback);
 }

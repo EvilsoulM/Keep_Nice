@@ -1,8 +1,8 @@
 package com.evilsoulm.keep_nice.model.dao.restapi.service;
 
-import com.evilsoulm.keep_nice.model.dao.entity.CollectionResponse;
+import com.evilsoulm.keep_nice.model.dao.entity.LastestNewsResponse;
 
-import retrofit2.Call;
+import rx.Observable;
 
 /**
  * Author by mazixuan
@@ -12,7 +12,7 @@ import retrofit2.Call;
  */
 public class NewsDataPrvdr extends BaseDataPrvdr<NewsService> {
 
-    public Call<CollectionResponse> getLastestNews() {
+    public Observable<LastestNewsResponse> getLastestNews() {
         return service.getLastestNews();
     }
 

@@ -1,5 +1,7 @@
 package com.evilsoulm.keep_nice;
 
+import com.evilsoulm.keep_nice.common.KeepApplication;
+
 /**
  * Author by mazixuan
  * Data:2015-12-08 19:24

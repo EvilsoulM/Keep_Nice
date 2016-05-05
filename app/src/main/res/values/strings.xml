@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">Keep_Nice</string>
     <string name="action_settings">Settings</string>
+
+    <string name="recommended">Recommended</string>
+    <string name="topics">Topics</string>
+    <string name="recent">Recent</string>
+    <string name="vote">Vote</string>
+    <string name="nobody">Nobody</string>
+    <string name="jobs">Jobs</string>
+    <string name="wiki">Wiki</string>
+    <string name="me">Me</string>
 </resources>

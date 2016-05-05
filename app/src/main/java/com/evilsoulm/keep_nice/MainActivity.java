@@ -1,64 +1,49 @@
 package com.evilsoulm.keep_nice;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
 
-import com.evilsoulm.keep_nice.domain.NewsUseCaseImp;
-import com.evilsoulm.keep_nice.model.dao.entity.CollectionResponse;
+import com.evilsoulm.keep_nice.common.base.BaseActivity;
+import com.ogaclejapan.smarttablayout.SmartTabLayout;
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
+import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import butterknife.Bind;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
+    @Bind(R.id.viewpager)
+    ViewPager viewPager;
+
+    @Bind(R.id.viewpagertab)
+    SmartTabLayout viewpagerTab;
+
+    @Override
+    protected int getLayoutResId() {
+        return R.layout.activity_main;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-        NewsUseCaseImp useCaseImp = new NewsUseCaseImp();
-        useCaseImp.requestlastestNews(new Callback<CollectionResponse>() {
-            @Override
-            public void onResponse(Call<CollectionResponse> call, Response<CollectionResponse> response) {
-
-            }
-
-            @Override
-            public void onFailure(Call<CollectionResponse> call, Throwable t) {
-
-            }
-        });
+        setupTabView();
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+    protected void setupTabView() {
+        final LayoutInflater inflater = LayoutInflater.from(this);
+        final int[] tabIcons = {R.drawable.ic_recommended, R.drawable.ic_topics, R.drawable.ic_wiki, R.drawable.ic_me};
+        FragmentPagerItems pages = FragmentPagerItems.with(this)
+                .add(R.string.recommended, RecommendedFragment.class)
+                .add(R.string.topics, TopicsFragment.class)
+                .add(R.string.wiki, WikiFragment.class)
+                .add(R.string.me, MeFragment.class)
+                .create();
+        FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
+                getSupportFragmentManager(),
+                pages);
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        viewPager.setOffscreenPageLimit(pages.size());
+        viewPager.setAdapter(adapter);
+        viewpagerTab.setViewPager(viewPager);
     }
 }

@@ -1,9 +1,9 @@
 package com.evilsoulm.keep_nice.model.dao.restapi.service;
 
-import com.evilsoulm.keep_nice.model.dao.entity.CollectionResponse;
+import com.evilsoulm.keep_nice.model.dao.entity.LastestNewsResponse;
 
-import retrofit2.Call;
 import retrofit2.http.GET;
+import rx.Observable;
 
 /**
  * Author by mazixuan
@@ -12,6 +12,6 @@ import retrofit2.http.GET;
  * Detail:
  */
 public interface NewsService {
-    @GET("/news/latest")
-    Call<CollectionResponse> getLastestNews();
+    @GET("api/4/news/latest")
+    Observable<LastestNewsResponse> getLastestNews();
 }

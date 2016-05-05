@@ -1,4 +1,4 @@
-package com.evilsoulm.keep_nice.app;
+package com.evilsoulm.keep_nice.common.app;
 
 import android.app.Application;
 import android.content.Context;

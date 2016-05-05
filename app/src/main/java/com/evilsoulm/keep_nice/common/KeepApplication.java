@@ -1,13 +1,14 @@
-package com.evilsoulm.keep_nice;
+package com.evilsoulm.keep_nice.common;
 
 import android.app.Application;
 import android.content.res.Configuration;
 import android.text.TextUtils;
 
 import com.evilsoulm.common.Utils.SysUtils;
-import com.evilsoulm.keep_nice.app.BaseApplication;
-import com.evilsoulm.keep_nice.app.KeepMainProcessApplication;
-import com.evilsoulm.keep_nice.app.KeepSecondProcessApplication;
+import com.evilsoulm.keep_nice.common.app.BaseApplication;
+import com.evilsoulm.keep_nice.common.app.KeepMainProcessApplication;
+import com.evilsoulm.keep_nice.common.app.KeepSecondProcessApplication;
+import com.evilsoulm.keep_nice.dl.components.ApiComponent;
 import com.evilsoulm.keep_nice.dl.components.ApplicationComponent;
 import com.evilsoulm.keep_nice.dl.components.DaggerApplicationComponent;
 import com.evilsoulm.keep_nice.dl.modules.ApplicationModule;
@@ -26,6 +27,7 @@ public class KeepApplication extends Application {
     private static KeepApplication application;
     private BaseApplication mBaseApplication;
     private ApplicationComponent applicationComponent;
+    private ApiComponent apiComponent;
 
     public static KeepApplication getApplication() {
         return application;
@@ -36,6 +38,7 @@ public class KeepApplication extends Application {
         super.onCreate();
         application = this;
         initializeInjector();
+        initializeInjectorApi();
         initApplication();
     }
 
@@ -79,8 +82,18 @@ public class KeepApplication extends Application {
                 .build();
     }
 
+    private void initializeInjectorApi() {
+        apiComponent = DaggerApiComponent.builder()
+                .appModule(new ApplicationModule(this))
+                .build();
+    }
+
     public ApplicationComponent getApplicationComponent() {
         return this.applicationComponent;
+    }
+
+    public ApiComponent getApiComponent() {
+        return apiComponent;
     }
 
 }

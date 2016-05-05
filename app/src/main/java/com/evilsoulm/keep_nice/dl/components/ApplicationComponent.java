@@ -2,8 +2,9 @@ package com.evilsoulm.keep_nice.dl.components;
 
 import android.content.Context;
 
+import com.evilsoulm.keep_nice.common.Navigator;
 import com.evilsoulm.keep_nice.dl.modules.ApplicationModule;
-import com.evilsoulm.keep_nice.view.DaggerActivity;
+import com.evilsoulm.keep_nice.ui.RecommendedFragment;
 
 import javax.inject.Singleton;
 
@@ -18,7 +19,9 @@ import dagger.Component;
 @Singleton
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
-    void inject(DaggerActivity baseActivity);
-
     Context context();
+
+    void inject(RecommendedFragment recommendedFragment);
+
+    Navigator navigator();
 }
