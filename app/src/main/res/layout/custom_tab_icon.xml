@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/shap_line_only_top">
+
+    <cn.bingoogolapple.badgeview.BGABadgeLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <cn.bingoogolapple.badgeview.BGABadgeFrameLayout
+            android:id="@+id/badgeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            app:badge_gravity="rightTop">
+
+            <ImageView
+                android:id="@+id/iv_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_me"
+                android:scaleType="center" />
+        </cn.bingoogolapple.badgeview.BGABadgeFrameLayout>
+    </cn.bingoogolapple.badgeview.BGABadgeLinearLayout>
+</RelativeLayout>

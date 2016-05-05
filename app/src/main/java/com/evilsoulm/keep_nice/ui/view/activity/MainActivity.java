@@ -1,9 +1,12 @@
-package com.evilsoulm.keep_nice;
+package com.evilsoulm.keep_nice.ui.view.activity;
 
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
 
+import com.evilsoulm.keep_nice.R;
 import com.evilsoulm.keep_nice.common.base.BaseActivity;
 import com.evilsoulm.keep_nice.ui.RecommendedFragment;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
@@ -45,6 +48,12 @@ public class MainActivity extends BaseActivity {
 
         viewPager.setOffscreenPageLimit(pages.size());
         viewPager.setAdapter(adapter);
+        viewpagerTab.setCustomTabView((container, position, pagerAdapter) -> {
+            View view = inflater.inflate(R.layout.custom_tab_icon, container, false);
+            ImageView iconView = (ImageView) view.findViewById(R.id.iv_icon);
+            iconView.setBackgroundResource(tabIcons[position % tabIcons.length]);
+            return view;
+        });
         viewpagerTab.setViewPager(viewPager);
     }
 }

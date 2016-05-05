@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar.OnMenuItemClickListener;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -36,6 +37,7 @@ import nucleus.factory.RequiresPresenter;
 @RequiresPresenter(RecommendedPresenter.class)
 public class RecommendedFragment extends LazyFragment<RecommendedPresenter> implements
         ViewEventListener<News> {
+    private static final String TAG = RecommendedFragment.class.getSimpleName();
     RecyclerMultiAdapter adapter;
     @Bind(R.id.multiStateView)
     MultiStateView multiStateView;
@@ -165,7 +167,7 @@ public class RecommendedFragment extends LazyFragment<RecommendedPresenter> impl
 
     @Override
     public void onViewEvent(int i, News news, int i1, View view) {
-
+        Log.d(TAG, "onViewEvent() called with: " + "i = [" + i + "], news = [" + news + "], i1 = [" + i1 + "], view = [" + view + "]");
         switch (i) {
             case ClickType.CLICK_TYPE_TOPIC_CLICKED:
 //                navigator.navigateToTopicDetails(getActivity(), topic.getId());

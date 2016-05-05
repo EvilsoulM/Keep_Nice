@@ -12,11 +12,6 @@ import java.io.File;
 import java.io.IOException;
 
 
-/**
- * Author:彭亮
- * Date:14-12-15
- * Time:下午5:02
- */
 public class ImageLoader {
 
     private RequestManager glideRequestManager;
