@@ -4,4 +4,6 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="toolbar_under_line">#CECECE</color>
+    <color name="item_badge_background">#64B3F1</color>
+    <color name="white">#ffffff</color>
 </resources>

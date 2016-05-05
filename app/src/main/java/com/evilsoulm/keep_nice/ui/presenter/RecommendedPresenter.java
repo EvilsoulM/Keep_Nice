@@ -1,8 +1,10 @@
 package com.evilsoulm.keep_nice.ui.presenter;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import com.evilsoulm.keep_nice.common.base.BaseRxPresenter;
+import com.evilsoulm.keep_nice.common.transformer.SchedulerTransformer;
 import com.evilsoulm.keep_nice.model.dao.restapi.service.NewsDataPrvdr;
 import com.evilsoulm.keep_nice.ui.RecommendedFragment;
 
@@ -20,9 +22,15 @@ public class RecommendedPresenter extends BaseRxPresenter<RecommendedFragment> {
         super.onCreate(savedState);
 
         restartableLatestCache(REQUEST_ID,
-                () -> newsDataPrvdr.getLastestNews(),
-                (recommendedFragment, response) -> recommendedFragment.onChangeItems(response, pageIndex),
-                (recommendedFragment, throwable) -> recommendedFragment.onNetworkError(throwable, pageIndex));
+                () -> newsDataPrvdr.getLastestNews().compose(new SchedulerTransformer<>()),
+                (recommendedFragment, topics) -> {
+                    Log.d("EvilsoulM", "haha");
+                    recommendedFragment.onChangeItems(topics, pageIndex);
+                },
+                (recommendedFragment, throwable) -> {
+                    Log.d("EvilsoulM", throwable.toString());
+                    recommendedFragment.onNetworkError(throwable, pageIndex);
+                });
     }
 
     public void refresh() {

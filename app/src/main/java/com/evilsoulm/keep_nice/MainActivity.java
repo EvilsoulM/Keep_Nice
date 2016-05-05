@@ -5,6 +5,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 
 import com.evilsoulm.keep_nice.common.base.BaseActivity;
+import com.evilsoulm.keep_nice.ui.RecommendedFragment;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
@@ -34,9 +35,9 @@ public class MainActivity extends BaseActivity {
         final int[] tabIcons = {R.drawable.ic_recommended, R.drawable.ic_topics, R.drawable.ic_wiki, R.drawable.ic_me};
         FragmentPagerItems pages = FragmentPagerItems.with(this)
                 .add(R.string.recommended, RecommendedFragment.class)
-                .add(R.string.topics, TopicsFragment.class)
-                .add(R.string.wiki, WikiFragment.class)
-                .add(R.string.me, MeFragment.class)
+                .add(R.string.topics, RecommendedFragment.class)
+                .add(R.string.wiki, RecommendedFragment.class)
+                .add(R.string.me, RecommendedFragment.class)
                 .create();
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),

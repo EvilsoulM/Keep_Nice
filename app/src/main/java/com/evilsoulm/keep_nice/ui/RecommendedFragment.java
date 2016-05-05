@@ -16,9 +16,11 @@ import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.evilsoulm.keep_nice.R;
 import com.evilsoulm.keep_nice.common.base.LazyFragment;
+import com.evilsoulm.keep_nice.common.qualifier.ClickType;
 import com.evilsoulm.keep_nice.model.dao.entity.LastestNewsResponse;
 import com.evilsoulm.keep_nice.model.dao.entity.News;
 import com.evilsoulm.keep_nice.ui.presenter.RecommendedPresenter;
+import com.evilsoulm.keep_nice.ui.view.TopicItemView;
 import com.kennyc.view.MultiStateView;
 
 import javax.inject.Inject;
@@ -55,13 +57,10 @@ public class RecommendedFragment extends LazyFragment<RecommendedPresenter> impl
     protected void injectorPresenter() {
         super.injectorPresenter();
         final PresenterFactory<RecommendedPresenter> superFactory = super.getPresenterFactory();
-        setPresenterFactory(new PresenterFactory<RecommendedPresenter>() {
-            @Override
-            public RecommendedPresenter createPresenter() {
-                RecommendedPresenter presenter = superFactory.createPresenter();
-                getApiComponent().inject(presenter);
-                return presenter;
-            }
+        setPresenterFactory(() -> {
+            RecommendedPresenter presenter = superFactory.createPresenter();
+            getApiComponent().inject(presenter);
+            return presenter;
         });
     }
 
@@ -80,7 +79,7 @@ public class RecommendedFragment extends LazyFragment<RecommendedPresenter> impl
             toolbarView.setOnMenuItemClickListener(new OnMenuItemClickListener() {
                 @Override
                 public boolean onMenuItemClick(MenuItem item) {
-                    navigator.navigateToPublishTopic(getContext());
+//                    navigator.navigateToPublishTopic(getContext());
                     return true;
                 }
             });
@@ -142,11 +141,11 @@ public class RecommendedFragment extends LazyFragment<RecommendedPresenter> impl
 
     public void onChangeItems(LastestNewsResponse response, int pageIndex) {
         if (pageIndex == 1) {
-            adapter.setItems(topics);
+            adapter.setItems(response.getStories());
             multiStateView.setViewState((MultiStateView.VIEW_STATE_CONTENT));
             refreshView.finishRefresh();
         } else {
-            adapter.addItems(topics);
+            adapter.addItems(response.getStories());
             refreshView.finishRefreshLoadMore();
         }
     }
@@ -166,16 +165,15 @@ public class RecommendedFragment extends LazyFragment<RecommendedPresenter> impl
 
     @Override
     public void onViewEvent(int i, News news, int i1, View view) {
-//        User userInfo = topic.getUser().getData();
-//
-//        switch (actionId) {
-//            case CLICK_TYPE_TOPIC_CLICKED:
+
+        switch (i) {
+            case ClickType.CLICK_TYPE_TOPIC_CLICKED:
 //                navigator.navigateToTopicDetails(getActivity(), topic.getId());
-//                break;
-//
-//            case CLICK_TYPE_USER_CLICKED:
+                break;
+
+            case ClickType.CLICK_TYPE_USER_CLICKED:
 //                navigator.navigateToUserSpace(getContext(), userInfo.getId());
-//                break;
-//        }
+                break;
+        }
     }
 }

@@ -1,5 +1,6 @@
 package com.evilsoulm.keep_nice.dl.modules;
 
+import android.accounts.AccountManager;
 import android.content.Context;
 
 import com.evilsoulm.keep_nice.common.KeepApplication;
@@ -27,5 +28,11 @@ public class ApplicationModule {
     @Singleton
     Context provideApplicationContext() {
         return this.application;
+    }
+
+    @Provides
+    @Singleton
+    AccountManager provideAccountManager(Context context) {
+        return AccountManager.get(context);
     }
 }

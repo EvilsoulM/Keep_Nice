@@ -1,9 +1,11 @@
 package com.evilsoulm.keep_nice.dl.components;
 
 import android.content.Context;
+import android.view.View;
 
 import com.evilsoulm.keep_nice.common.Navigator;
 import com.evilsoulm.keep_nice.dl.modules.ApplicationModule;
+import com.evilsoulm.keep_nice.dl.modules.NetModule;
 import com.evilsoulm.keep_nice.ui.RecommendedFragment;
 
 import javax.inject.Singleton;
@@ -17,11 +19,13 @@ import dagger.Component;
  * Detail:
  */
 @Singleton
-@Component(modules = ApplicationModule.class)
+@Component(modules = {ApplicationModule.class, NetModule.class})
 public interface ApplicationComponent {
     Context context();
 
     void inject(RecommendedFragment recommendedFragment);
+
+    void inject(View view);
 
     Navigator navigator();
 }

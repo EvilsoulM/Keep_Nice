@@ -10,6 +10,7 @@ import com.evilsoulm.keep_nice.common.app.KeepMainProcessApplication;
 import com.evilsoulm.keep_nice.common.app.KeepSecondProcessApplication;
 import com.evilsoulm.keep_nice.dl.components.ApiComponent;
 import com.evilsoulm.keep_nice.dl.components.ApplicationComponent;
+import com.evilsoulm.keep_nice.dl.components.DaggerApiComponent;
 import com.evilsoulm.keep_nice.dl.components.DaggerApplicationComponent;
 import com.evilsoulm.keep_nice.dl.modules.ApplicationModule;
 
@@ -84,7 +85,7 @@ public class KeepApplication extends Application {
 
     private void initializeInjectorApi() {
         apiComponent = DaggerApiComponent.builder()
-                .appModule(new ApplicationModule(this))
+                .applicationModule(new ApplicationModule(this))
                 .build();
     }
 

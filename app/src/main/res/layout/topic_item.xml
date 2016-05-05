@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<cn.bingoogolapple.badgeview.BGABadgeRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bga_rlyt_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="8dp"
+    android:background="@drawable/topic_item_bg"
+    android:orientation="horizontal"
+    android:paddingBottom="5dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="8dp"
+    app:badge_bgColor="@color/item_badge_background"
+    app:badge_horizontalMargin="12dp"
+    app:badge_padding="6dp"
+    app:badge_textColor="@color/white"
+    app:badge_textSize="10sp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <com.evilsoulm.keep_nice.ui.view.component.RemoteImageView
+            android:id="@+id/avatar"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <LinearLayout
+            android:id="@+id/rlyt_item_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="35dp"
+            android:layout_toRightOf="@id/avatar"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/list_topic_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Homestead 环境：用 Homestead 命令行来操作虚拟机" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                style="@style/list_topic_des"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                tools:text="安全 • 最后由 fvzone • 4天" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</cn.bingoogolapple.badgeview.BGABadgeRelativeLayout>
