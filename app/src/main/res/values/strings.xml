@@ -10,4 +10,11 @@
     <string name="jobs">Jobs</string>
     <string name="wiki">Wiki</string>
     <string name="me">Me</string>
+
+    <integer-array name="progress_bar_colors">
+        <item>@color/item_badge_background</item>
+        <item>@color/item_badge_background</item>
+        <item>@color/item_badge_background</item>
+        <item>@color/item_badge_background</item>
+    </integer-array>
 </resources>
