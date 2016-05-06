@@ -45,11 +45,7 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    OkHttpClient provideOkhttp(Context context) {
-        return getOkHttp(context);
-    }
-
-    private OkHttpClient getOkHttp(Context context) {
+    OkHttpClient provideOkhttp(Context context, Cache cache) {
         OkHttpClient.Builder client = new OkHttpClient().newBuilder();
         OkHttpCacheInterceptor okHttpCacheInterceptor = new OkHttpCacheInterceptor();
 
@@ -59,6 +55,17 @@ public class ApplicationModule {
         client.connectTimeout(30, TimeUnit.SECONDS);
         client.readTimeout(30, TimeUnit.SECONDS);
         client.writeTimeout(30, TimeUnit.SECONDS);
+
+        if (cache != null) {
+            client.cache(cache);
+        }
+
+        return client.build();
+    }
+
+    @Provides
+    @Singleton
+    Cache provideCache(Context context) {
 
         //设置缓存
         File httpCacheDirectory = new File(context.getCacheDir(), "responses");
@@ -70,10 +77,6 @@ public class ApplicationModule {
             e.printStackTrace();
         }
 
-        if (cache != null) {
-            client.cache(cache);
-        }
-
-        return client.build();
+        return cache;
     }
 }
