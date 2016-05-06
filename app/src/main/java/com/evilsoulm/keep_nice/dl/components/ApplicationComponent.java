@@ -11,6 +11,7 @@ import com.evilsoulm.keep_nice.ui.FeedFragment;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import okhttp3.OkHttpClient;
 
 /**
  * Author by mazixuan
@@ -26,6 +27,8 @@ public interface ApplicationComponent {
     void inject(FeedFragment feedFragment);
 
     void inject(View view);
+
+    OkHttpClient okhttpClient();
 
     Navigator navigator();
 }
