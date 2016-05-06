@@ -19,7 +19,7 @@ public class RetrofitProvider {
         Retrofit.Builder builder = new Retrofit.Builder();
         builder.addConverterFactory(GsonConverterFactory.create());
         builder.addCallAdapterFactory(RxJavaCallAdapterFactory.create());
-        builder.baseUrl(ApiConst.BASE_URL);
+        builder.baseUrl(ApiConst.BASE_URL + ApiConst.API_DATA);
         builder.client(okHttpClient);
         retrofit = builder.build();
     }

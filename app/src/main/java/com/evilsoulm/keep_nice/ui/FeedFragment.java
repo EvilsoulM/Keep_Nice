@@ -18,11 +18,12 @@ import com.cjj.MaterialRefreshListener;
 import com.evilsoulm.keep_nice.R;
 import com.evilsoulm.keep_nice.common.base.LazyFragment;
 import com.evilsoulm.keep_nice.common.qualifier.ClickType;
-import com.evilsoulm.keep_nice.model.dao.entity.LastestNewsResponse;
-import com.evilsoulm.keep_nice.model.dao.entity.News;
-import com.evilsoulm.keep_nice.ui.presenter.RecommendedPresenter;
-import com.evilsoulm.keep_nice.ui.view.TopicItemView;
+import com.evilsoulm.keep_nice.model.dao.entity.Feed;
+import com.evilsoulm.keep_nice.ui.presenter.FeedPresenter;
+import com.evilsoulm.keep_nice.ui.view.FeedtemView;
 import com.kennyc.view.MultiStateView;
+
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -34,10 +35,10 @@ import io.nlopez.smartadapters.utils.ViewEventListener;
 import nucleus.factory.PresenterFactory;
 import nucleus.factory.RequiresPresenter;
 
-@RequiresPresenter(RecommendedPresenter.class)
-public class RecommendedFragment extends LazyFragment<RecommendedPresenter> implements
-        ViewEventListener<News> {
-    private static final String TAG = RecommendedFragment.class.getSimpleName();
+@RequiresPresenter(FeedPresenter.class)
+public class FeedFragment extends LazyFragment<FeedPresenter> implements
+        ViewEventListener<Feed> {
+    private static final String TAG = FeedFragment.class.getSimpleName();
     RecyclerMultiAdapter adapter;
     @Bind(R.id.multiStateView)
     MultiStateView multiStateView;
@@ -58,9 +59,9 @@ public class RecommendedFragment extends LazyFragment<RecommendedPresenter> impl
     @Override
     protected void injectorPresenter() {
         super.injectorPresenter();
-        final PresenterFactory<RecommendedPresenter> superFactory = super.getPresenterFactory();
+        final PresenterFactory<FeedPresenter> superFactory = super.getPresenterFactory();
         setPresenterFactory(() -> {
-            RecommendedPresenter presenter = superFactory.createPresenter();
+            FeedPresenter presenter = superFactory.createPresenter();
             getApiComponent().inject(presenter);
             return presenter;
         });
@@ -69,7 +70,7 @@ public class RecommendedFragment extends LazyFragment<RecommendedPresenter> impl
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.topic_normal_list, container, false);
+        return inflater.inflate(R.layout.feed_normal_list, container, false);
     }
 
     @Override
@@ -89,7 +90,7 @@ public class RecommendedFragment extends LazyFragment<RecommendedPresenter> impl
 
         topicListView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = SmartAdapter.empty()
-                .map(News.class, TopicItemView.class)
+                .map(Feed.class, FeedtemView.class)
                 .listener(this)
                 .into(topicListView);
 
@@ -141,13 +142,13 @@ public class RecommendedFragment extends LazyFragment<RecommendedPresenter> impl
         return getString(R.string.recommended);
     }
 
-    public void onChangeItems(LastestNewsResponse response, int pageIndex) {
+    public void onChangeItems(List<Feed> feedList, int pageIndex) {
         if (pageIndex == 1) {
-            adapter.setItems(response.getStories());
+            adapter.setItems(feedList);
             multiStateView.setViewState((MultiStateView.VIEW_STATE_CONTENT));
             refreshView.finishRefresh();
         } else {
-            adapter.addItems(response.getStories());
+            adapter.addItems(feedList);
             refreshView.finishRefreshLoadMore();
         }
     }
@@ -166,8 +167,8 @@ public class RecommendedFragment extends LazyFragment<RecommendedPresenter> impl
     }
 
     @Override
-    public void onViewEvent(int i, News news, int i1, View view) {
-        Log.d(TAG, "onViewEvent() called with: " + "i = [" + i + "], news = [" + news + "], i1 = [" + i1 + "], view = [" + view + "]");
+    public void onViewEvent(int i, Feed feed, int i1, View view) {
+        Log.d(TAG, "onViewEvent() called with: " + "i = [" + i + "], news = [" + feed + "], i1 = [" + i1 + "], view = [" + view + "]");
         switch (i) {
             case ClickType.CLICK_TYPE_TOPIC_CLICKED:
 //                navigator.navigateToTopicDetails(getActivity(), topic.getId());

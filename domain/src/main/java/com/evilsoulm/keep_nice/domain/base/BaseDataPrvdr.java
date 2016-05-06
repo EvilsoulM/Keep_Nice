@@ -1,4 +1,4 @@
-package com.evilsoulm.keep_nice.model.dao.restapi.service;
+package com.evilsoulm.keep_nice.domain.base;
 
 import com.evilsoulm.keep_nice.model.dao.restapi.RetrofitProvider;
 

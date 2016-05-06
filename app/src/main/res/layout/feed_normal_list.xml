@@ -6,6 +6,6 @@
 
     <include layout="@layout/common_toolbar" />
 
-    <include layout="@layout/topic_list" />
+    <include layout="@layout/feed_list" />
 
 </LinearLayout>

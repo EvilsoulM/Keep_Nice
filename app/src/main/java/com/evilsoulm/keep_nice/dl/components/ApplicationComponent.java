@@ -6,7 +6,7 @@ import android.view.View;
 import com.evilsoulm.keep_nice.common.Navigator;
 import com.evilsoulm.keep_nice.dl.modules.ApplicationModule;
 import com.evilsoulm.keep_nice.dl.modules.NetModule;
-import com.evilsoulm.keep_nice.ui.RecommendedFragment;
+import com.evilsoulm.keep_nice.ui.FeedFragment;
 
 import javax.inject.Singleton;
 
@@ -23,7 +23,7 @@ import dagger.Component;
 public interface ApplicationComponent {
     Context context();
 
-    void inject(RecommendedFragment recommendedFragment);
+    void inject(FeedFragment feedFragment);
 
     void inject(View view);
 

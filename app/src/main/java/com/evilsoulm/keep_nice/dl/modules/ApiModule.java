@@ -1,6 +1,6 @@
 package com.evilsoulm.keep_nice.dl.modules;
 
-import com.evilsoulm.keep_nice.model.dao.restapi.service.NewsDataPrvdr;
+import com.evilsoulm.keep_nice.domain.base.FeedDataPrvdr;
 
 import javax.inject.Singleton;
 
@@ -12,7 +12,7 @@ public class ApiModule {
 
     @Provides
     @Singleton
-    NewsDataPrvdr provideNewsDataPrvdr() {
-        return new NewsDataPrvdr();
+    FeedDataPrvdr provideFeedDataPrvdr() {
+        return new FeedDataPrvdr();
     }
 }

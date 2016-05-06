@@ -8,7 +8,7 @@ import android.widget.ImageView;
 
 import com.evilsoulm.keep_nice.R;
 import com.evilsoulm.keep_nice.common.base.BaseActivity;
-import com.evilsoulm.keep_nice.ui.RecommendedFragment;
+import com.evilsoulm.keep_nice.ui.FeedFragment;
 import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItemAdapter;
 import com.ogaclejapan.smarttablayout.utils.v4.FragmentPagerItems;
@@ -37,10 +37,10 @@ public class MainActivity extends BaseActivity {
         final LayoutInflater inflater = LayoutInflater.from(this);
         final int[] tabIcons = {R.drawable.ic_recommended, R.drawable.ic_topics, R.drawable.ic_wiki, R.drawable.ic_me};
         FragmentPagerItems pages = FragmentPagerItems.with(this)
-                .add(R.string.recommended, RecommendedFragment.class)
-                .add(R.string.topics, RecommendedFragment.class)
-                .add(R.string.wiki, RecommendedFragment.class)
-                .add(R.string.me, RecommendedFragment.class)
+                .add(R.string.recommended, FeedFragment.class)
+                .add(R.string.topics, FeedFragment.class)
+                .add(R.string.wiki, FeedFragment.class)
+                .add(R.string.me, FeedFragment.class)
                 .create();
         FragmentPagerItemAdapter adapter = new FragmentPagerItemAdapter(
                 getSupportFragmentManager(),
