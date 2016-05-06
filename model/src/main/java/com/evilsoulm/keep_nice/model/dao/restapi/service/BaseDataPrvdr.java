@@ -17,8 +17,7 @@ public abstract class BaseDataPrvdr<Service> {
     protected Service service;
 
     public BaseDataPrvdr() {
-        RetrofitProvider retrofitProvider = RetrofitProvider.getInstance();
-        service = retrofitProvider.createService(getServiceClass());
+        service = RetrofitProvider.createService(getServiceClass());
     }
 
     protected <T> void toSubscribe(Observable<T> o, Subscriber<T> s) {

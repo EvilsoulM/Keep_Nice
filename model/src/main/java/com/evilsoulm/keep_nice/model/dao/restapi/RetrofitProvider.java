@@ -13,12 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class RetrofitProvider {
 
-    private static RetrofitProvider provider;
-
     private static Retrofit retrofit;
-
-    private RetrofitProvider() {
-    }
 
     public static void init(OkHttpClient okHttpClient) {
         Retrofit.Builder builder = new Retrofit.Builder();
@@ -29,18 +24,11 @@ public class RetrofitProvider {
         retrofit = builder.build();
     }
 
-    public static RetrofitProvider getInstance() {
-        return SingleInstanceHolder.instance;
-    }
-
-    public <T> T createService(Class<T> clz) {
+    public static <T> T createService(Class<T> clz) {
         if (retrofit == null) {
             throw new NullPointerException("RetrofitProvider is not init !");
         }
         return (retrofit.create(clz));
     }
 
-    private static class SingleInstanceHolder {
-        private static RetrofitProvider instance = new RetrofitProvider();
-    }
 }
