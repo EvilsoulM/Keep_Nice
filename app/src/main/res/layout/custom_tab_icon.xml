@@ -24,7 +24,7 @@
                 android:id="@+id/iv_icon"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:background="@drawable/ic_me"
+                android:background="@mipmap/actor_evaluation"
                 android:scaleType="center" />
         </cn.bingoogolapple.badgeview.BGABadgeFrameLayout>
     </cn.bingoogolapple.badgeview.BGABadgeLinearLayout>

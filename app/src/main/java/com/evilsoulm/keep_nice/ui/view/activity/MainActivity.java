@@ -35,7 +35,7 @@ public class MainActivity extends BaseActivity {
 
     protected void setupTabView() {
         final LayoutInflater inflater = LayoutInflater.from(this);
-        final int[] tabIcons = {R.drawable.ic_recommended, R.drawable.ic_topics, R.drawable.ic_wiki, R.drawable.ic_me};
+        final int[] tabIcons = {R.mipmap.actor_evaluation, R.mipmap.actor_life, R.mipmap.actor_society, R.mipmap.actor_trivia};
         FragmentPagerItems pages = FragmentPagerItems.with(this)
                 .add(R.string.recommended, FeedFragment.class)
                 .add(R.string.topics, FeedFragment.class)
