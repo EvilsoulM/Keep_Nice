@@ -20,7 +20,7 @@ import com.evilsoulm.keep_nice.common.base.LazyFragment;
 import com.evilsoulm.keep_nice.common.qualifier.ClickType;
 import com.evilsoulm.keep_nice.model.dao.entity.Feed;
 import com.evilsoulm.keep_nice.ui.presenter.FeedPresenter;
-import com.evilsoulm.keep_nice.ui.view.FeedtemView;
+import com.evilsoulm.keep_nice.ui.view.FeedItemView;
 import com.kennyc.view.MultiStateView;
 
 import java.util.List;
@@ -90,7 +90,7 @@ public class FeedFragment extends LazyFragment<FeedPresenter> implements
 
         topicListView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = SmartAdapter.empty()
-                .map(Feed.class, FeedtemView.class)
+                .map(Feed.class, FeedItemView.class)
                 .listener(this)
                 .into(topicListView);
 

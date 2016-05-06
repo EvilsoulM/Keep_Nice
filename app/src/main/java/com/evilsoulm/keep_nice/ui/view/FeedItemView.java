@@ -12,7 +12,7 @@ import com.evilsoulm.keep_nice.ui.view.component.RemoteImageView;
 import butterknife.Bind;
 import cn.bingoogolapple.badgeview.BGABadgeRelativeLayout;
 
-public class FeedtemView extends BaseAdapterItemView<Feed> {
+public class FeedItemView extends BaseAdapterItemView<Feed> {
     @Bind(R.id.bga_rlyt_content)
     BGABadgeRelativeLayout topicContentView;
 
@@ -25,7 +25,7 @@ public class FeedtemView extends BaseAdapterItemView<Feed> {
     @Bind(R.id.tv_description)
     TextView descriptionView;
 
-    public FeedtemView(Context context) {
+    public FeedItemView(Context context) {
         super(context);
     }
 
@@ -44,7 +44,7 @@ public class FeedtemView extends BaseAdapterItemView<Feed> {
         topicContentView.showTextBadge("0");
         titleView.setText(feed.getDesc());
 
-        descriptionView.setText(feed.getDesc());
+        descriptionView.setText(feed.getPublishedAt());
 
         topicContentView.setOnClickListener(v -> notifyItemAction(ClickType.CLICK_TYPE_TOPIC_CLICKED));
 
