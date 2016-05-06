@@ -3,7 +3,7 @@ package com.evilsoulm.keep_nice.model.dao.entity;
 import java.util.List;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-05 11:57
  * Project:Keep_Nice
  * Detail:

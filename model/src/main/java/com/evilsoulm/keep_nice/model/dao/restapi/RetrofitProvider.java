@@ -6,7 +6,7 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-04 22:19
  * Project:Keep_Nice
  * Detail:

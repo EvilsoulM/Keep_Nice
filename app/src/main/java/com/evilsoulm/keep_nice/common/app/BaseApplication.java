@@ -6,7 +6,7 @@ import android.content.res.Configuration;
 
 
 /**
- * Author by mazixuan
+ * Author by
  */
 public abstract class BaseApplication {
     private Application application;

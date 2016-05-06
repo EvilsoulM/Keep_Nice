@@ -10,7 +10,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2015-12-10 23:41
  * Project:Keep_Nice
  * Detail:

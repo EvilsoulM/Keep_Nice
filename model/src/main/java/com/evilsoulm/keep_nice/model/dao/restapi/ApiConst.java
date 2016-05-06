@@ -1,7 +1,7 @@
 package com.evilsoulm.keep_nice.model.dao.restapi;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-04 22:57
  * Project:Keep_Nice
  * Detail:

@@ -8,7 +8,7 @@ import com.evilsoulm.keep_nice.model.dao.restapi.service.FeedService;
 import rx.Observable;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-06 13:23
  * Project:Keep_Nice
  * Detail:

@@ -14,7 +14,7 @@ import dagger.Component;
 import okhttp3.OkHttpClient;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-04 16:05
  * Project:Keep_Nice
  * Detail:

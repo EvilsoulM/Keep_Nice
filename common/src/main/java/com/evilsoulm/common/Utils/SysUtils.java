@@ -4,7 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-04 11:27
  * Project:Keep_Nice
  * Detail:

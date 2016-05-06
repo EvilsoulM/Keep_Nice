@@ -8,7 +8,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-05 13:02
  * Project:Keep_Nice
  * Detail:

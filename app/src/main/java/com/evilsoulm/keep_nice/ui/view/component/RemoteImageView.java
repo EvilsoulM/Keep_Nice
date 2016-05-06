@@ -11,7 +11,7 @@ import com.evilsoulm.keep_nice.common.KeepApplication;
 import javax.inject.Inject;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-05 22:06
  * Project:Keep_Nice
  * Detail:

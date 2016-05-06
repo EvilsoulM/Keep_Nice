@@ -14,7 +14,7 @@ import org.aspectj.lang.reflect.MethodSignature;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2015-12-10 23:12
  * Project:Keep_Nice
  * Detail:

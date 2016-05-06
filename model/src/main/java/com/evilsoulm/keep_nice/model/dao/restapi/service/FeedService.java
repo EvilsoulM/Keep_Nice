@@ -9,7 +9,7 @@ import retrofit2.http.Path;
 import rx.Observable;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-06 13:19
  * Project:Keep_Nice
  * Detail:

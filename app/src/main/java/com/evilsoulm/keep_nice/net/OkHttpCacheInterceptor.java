@@ -12,7 +12,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-05 14:34
  * Project:Keep_Nice
  * Detail:

@@ -1,7 +1,7 @@
 package com.evilsoulm.keep_nice.domain.base;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-05 14:24
  * Project:Keep_Nice
  * Detail:

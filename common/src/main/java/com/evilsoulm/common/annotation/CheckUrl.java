@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2015-12-10 23:39
  * Project:Keep_Nice
  * Detail:

@@ -3,7 +3,7 @@ package com.evilsoulm.common.Utils;
 import android.util.Log;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2015-12-11 10:22
  * Project:Keep_Nice
  * Detail:

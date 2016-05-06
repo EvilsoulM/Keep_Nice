@@ -10,7 +10,7 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-04 16:10
  * Project:Keep_Nice
  * Detail:

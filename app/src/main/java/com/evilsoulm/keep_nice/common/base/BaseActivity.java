@@ -21,7 +21,7 @@ import nucleus.presenter.Presenter;
 import nucleus.view.NucleusAppCompatActivity;
 
 /**
- * Author by mazixuan
+ * Author by EvilsoulM
  * Data:2016-05-04 16:06
  * Project:Keep_Nice
  * Detail:
