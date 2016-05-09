@@ -23,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.view.activity.WebViewActivity"></activity>
+        <activity android:name=".ui.view.activity.WebViewActivity" />
     </application>
 
 </manifest>

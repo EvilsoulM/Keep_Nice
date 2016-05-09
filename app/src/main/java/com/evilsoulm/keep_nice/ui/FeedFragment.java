@@ -17,7 +17,6 @@ import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
 import com.evilsoulm.keep_nice.R;
 import com.evilsoulm.keep_nice.common.base.LazyFragment;
-import com.evilsoulm.keep_nice.common.qualifier.ClickType;
 import com.evilsoulm.keep_nice.model.dao.entity.Feed;
 import com.evilsoulm.keep_nice.ui.presenter.FeedPresenter;
 import com.evilsoulm.keep_nice.ui.view.FeedItemView;
@@ -169,15 +168,6 @@ public class FeedFragment extends LazyFragment<FeedPresenter> implements
     @Override
     public void onViewEvent(int i, Feed feed, int i1, View view) {
         Log.d(TAG, "onViewEvent() called with: " + "i = [" + i + "], news = [" + feed + "], i1 = [" + i1 + "], view = [" + view + "]");
-        switch (i) {
-            case ClickType.CLICK_TYPE_TOPIC_CLICKED:
-//                navigator.navigateToTopicDetails(getActivity(), topic.getId());
-                break;
-
-            case ClickType.CLICK_TYPE_USER_CLICKED:
-//                navigator.navigateToUserSpace(getContext(), userInfo.getId());
-                break;
-        }
         navigator.navigatorToWebView(getContext(), feed);
     }
 }
