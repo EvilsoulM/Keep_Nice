@@ -40,7 +40,7 @@ public abstract class BaseSupportFragment<PresenterType extends Presenter> exten
     public void onCreate(Bundle bundle) {
         injectorPresenter();
         super.onCreate(bundle);
-        navigator = getAppComponent().navigator();
+        navigator = getAppComponent().navigator().get();
     }
 
 

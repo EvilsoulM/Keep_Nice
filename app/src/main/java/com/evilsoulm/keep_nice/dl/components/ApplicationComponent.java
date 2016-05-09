@@ -11,6 +11,7 @@ import com.evilsoulm.keep_nice.ui.FeedFragment;
 import javax.inject.Singleton;
 
 import dagger.Component;
+import dagger.Lazy;
 import okhttp3.OkHttpClient;
 
 /**
@@ -30,5 +31,5 @@ public interface ApplicationComponent {
 
     OkHttpClient okhttpClient();
 
-    Navigator navigator();
+    Lazy<Navigator> navigator();
 }

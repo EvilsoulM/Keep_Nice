@@ -7,7 +7,7 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
-@Module(includes = ApplicationModule.class)
+@Module
 public class ApiModule {
 
     @Provides

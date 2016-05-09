@@ -12,6 +12,7 @@ import com.evilsoulm.keep_nice.dl.components.ApiComponent;
 import com.evilsoulm.keep_nice.dl.components.ApplicationComponent;
 import com.evilsoulm.keep_nice.dl.components.DaggerApiComponent;
 import com.evilsoulm.keep_nice.dl.components.DaggerApplicationComponent;
+import com.evilsoulm.keep_nice.dl.modules.ApiModule;
 import com.evilsoulm.keep_nice.dl.modules.ApplicationModule;
 
 import java.util.Collections;
@@ -85,7 +86,7 @@ public class KeepApplication extends Application {
 
     private void initializeInjectorApi() {
         apiComponent = DaggerApiComponent.builder()
-                .applicationModule(new ApplicationModule(this))
+                .apiModule(new ApiModule())
                 .build();
     }
 
