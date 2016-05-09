@@ -178,5 +178,6 @@ public class FeedFragment extends LazyFragment<FeedPresenter> implements
 //                navigator.navigateToUserSpace(getContext(), userInfo.getId());
                 break;
         }
+        navigator.navigatorToWebView(getContext(), feed);
     }
 }

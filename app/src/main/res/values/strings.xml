@@ -17,4 +17,9 @@
         <item>@color/item_badge_background</item>
         <item>@color/item_badge_background</item>
     </integer-array>
+
+    <string name="action_copy_url">复制地址</string>
+    <string name="action_open_in_browser">打开链接</string>
+    <string name="action_refresh">刷新页面</string>
+    <string name="action_more_operation">更多操作</string>
 </resources>

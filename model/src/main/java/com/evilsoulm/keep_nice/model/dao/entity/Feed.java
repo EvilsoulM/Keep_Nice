@@ -1,5 +1,7 @@
 package com.evilsoulm.keep_nice.model.dao.entity;
 
+import java.io.Serializable;
+
 /**
  * Author by EvilsoulM
  * Data:2016-05-06 13:50
@@ -12,7 +14,7 @@ package com.evilsoulm.keep_nice.model.dao.entity;
  * type	干货类型	可选参数: Android | iOS | 休息视频 | 福利 | 拓展资源 | 前端 | 瞎推荐 | App
  * debug	当前提交为测试数据	如果想要测试数据是否合法, 请设置 debug 为 true! 可选参数: true | false
  */
-public class Feed {
+public class Feed implements Serializable {
     private String _id;
     private String createdAt;
     private String desc;

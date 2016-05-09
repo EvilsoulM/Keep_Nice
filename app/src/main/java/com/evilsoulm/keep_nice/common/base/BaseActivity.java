@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import com.evilsoulm.keep_nice.R;
 import com.evilsoulm.keep_nice.common.KeepApplication;
+import com.evilsoulm.keep_nice.dl.components.ApiComponent;
 import com.evilsoulm.keep_nice.dl.components.ApplicationComponent;
 import com.evilsoulm.keep_nice.dl.modules.ActivityModule;
 
@@ -83,6 +84,10 @@ public abstract class BaseActivity<PresenterType extends Presenter> extends Nucl
 
     protected ApplicationComponent getAppComponent() {
         return ((KeepApplication) getApplication()).getApplicationComponent();
+    }
+
+    protected ApiComponent getApiComponent() {
+        return ((KeepApplication) getApplication()).getApiComponent();
     }
 
 

@@ -89,6 +89,7 @@ dependencies {
     compile 'io.nlopez.smartadapters:library:1.2.2'
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'cn.bingoogolapple:bga-badgeview:1.1.1@aar'
+    compile 'com.daimajia.numberprogressbar:library:1.2@aar'
 }
 
 

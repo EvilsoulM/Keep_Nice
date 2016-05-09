@@ -105,8 +105,8 @@ public class MaterialRefreshLayout extends FrameLayout {
         colorsId = t.getResourceId(R.styleable.MaterialRefreshLayout_progress_colors, R.array.material_colors);
         colorSchemeColors = context.getResources().getIntArray(colorsId);
         showArrow = t.getBoolean(R.styleable.MaterialRefreshLayout_progress_show_arrow, true);
-        textType = t.getInt(R.styleable.MaterialRefreshLayout_progress_text_visibility, 1);
-        progressTextColor = t.getColor(R.styleable.MaterialRefreshLayout_progress_text_color, Color.BLACK);
+        textType = t.getInt(R.styleable.MaterialRefreshLayout_circle_progress_text_visibility, 1);
+        progressTextColor = t.getColor(R.styleable.MaterialRefreshLayout_circle_progress_text_color, Color.BLACK);
         progressValue = t.getInteger(R.styleable.MaterialRefreshLayout_progress_value, 0);
         progressMax = t.getInteger(R.styleable.MaterialRefreshLayout_progress_max_value, 100);
         showProgressBg = t.getBoolean(R.styleable.MaterialRefreshLayout_progress_show_circle_backgroud, true);

@@ -20,9 +20,9 @@
         <attr name="progress_show_circle_backgroud" format="boolean" />
         <attr name="progress_value" format="integer" />
         <attr name="progress_max_value" format="integer" />
-        <attr name="progress_text_size" format="dimension" />
-        <attr name="progress_text_color" format="color" />
-        <attr name="progress_text_visibility" format="enum">
+        <attr name="circle_progress_text_size" format="dimension" />
+        <attr name="circle_progress_text_color" format="color" />
+        <attr name="circle_progress_text_visibility" format="enum">
             <enum name="visible" value="0" />
             <enum name="invisible" value="1" />
         </attr>
