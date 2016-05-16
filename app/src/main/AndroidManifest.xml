@@ -24,6 +24,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.view.activity.WebViewActivity" />
+        <activity android:name=".ui.view.activity.FlexBoxLayoutActivity" />
     </application>
 
 </manifest>

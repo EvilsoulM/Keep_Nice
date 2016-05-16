@@ -1,0 +1,52 @@
+<com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/flex_box"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:alignContent="flex_end"
+    app:alignItems="center">
+
+    <TextView
+        android:id="@+id/textview1"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:background="@color/material_blue"
+        android:gravity="center"
+        android:text="1111111"
+        app:layout_order="4" />
+
+
+    <TextView
+        android:id="@+id/textview2"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@color/material_red"
+        android:gravity="center"
+        android:text="2222222"
+        app:layout_order="-1" />
+
+    <TextView
+        android:id="@+id/textview3"
+        android:layout_width="90dp"
+        android:layout_height="80dp"
+        android:background="@color/material_yellow"
+        android:gravity="center"
+        android:text="3333333" />
+
+    <TextView
+        android:id="@+id/textview4"
+        android:layout_width="180dp"
+        android:layout_height="80dp"
+        android:background="@color/material_green"
+        android:gravity="center"
+        android:text="4444444" />
+
+    <TextView
+        android:id="@+id/textview5"
+        android:layout_width="230dp"
+        android:layout_height="80dp"
+        android:background="@android:color/background_dark"
+        android:gravity="center"
+        android:text="55555"
+        android:textColor="@color/white" />
+</com.google.android.flexbox.FlexboxLayout>

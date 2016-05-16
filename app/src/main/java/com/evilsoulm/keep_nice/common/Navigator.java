@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 
 import com.evilsoulm.keep_nice.model.dao.entity.Feed;
+import com.evilsoulm.keep_nice.ui.view.activity.FlexBoxLayoutActivity;
 import com.evilsoulm.keep_nice.ui.view.activity.WebViewActivity;
 
 import javax.inject.Inject;
@@ -19,5 +20,11 @@ public class Navigator {
     public void navigatorToWebView(@NonNull Context context, Feed feed) {
         Intent intentToLaunch = WebViewActivity.getCallingIntent(context, feed);
         context.startActivity(intentToLaunch);
+    }
+
+
+    public void navigatorToFlexBoxLayoutActivity(Context context) {
+        Intent intentToFlexBox = new Intent(context, FlexBoxLayoutActivity.class);
+        context.startActivity(intentToFlexBox);
     }
 }
