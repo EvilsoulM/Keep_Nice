@@ -3,18 +3,21 @@ package com.evilsoulm.keep_nice.ui.view.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.daimajia.numberprogressbar.NumberProgressBar;
 import com.evilsoulm.keep_nice.R;
 import com.evilsoulm.keep_nice.common.base.BaseActivity;
+import com.evilsoulm.keep_nice.common.parser.ViewBinder;
+import com.evilsoulm.keep_nice.common.parser.ViewBinderParser;
 import com.evilsoulm.keep_nice.model.dao.entity.Feed;
 import com.evilsoulm.keep_nice.ui.presenter.WebViewPresenter;
 import com.evilsoulm.keep_nice.ui.view.listener.IWebView;
+import com.tencent.smtt.sdk.WebView;
 
 import butterknife.Bind;
 import nucleus.factory.PresenterFactory;
@@ -27,6 +30,8 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements I
     WebView webView;
     @Bind(R.id.progressbar)
     NumberProgressBar progressbar;
+    @ViewBinder(id = R.id.bottom)
+    View view;
 
     private Feed feed;
 
@@ -101,6 +106,8 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements I
                 getPresenter().openInBrowser(webView.getUrl());
                 break;
             case R.id.action_share_gank:
+                ViewBinderParser.inject(WebViewActivity.this);
+                Log.i("tag", view.getHeight() + " ####");
                 break;
         }
         return super.onOptionsItemSelected(item);

@@ -2,14 +2,14 @@ package com.evilsoulm.keep_nice.ui.presenter;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 import com.evilsoulm.common.Utils.AndroidUtil;
 import com.evilsoulm.keep_nice.common.base.BaseRxPresenter;
 import com.evilsoulm.keep_nice.ui.view.activity.WebViewActivity;
+import com.tencent.smtt.sdk.WebChromeClient;
+import com.tencent.smtt.sdk.WebSettings;
+import com.tencent.smtt.sdk.WebView;
+import com.tencent.smtt.sdk.WebViewClient;
 
 /**
  * Author by mazixuan
@@ -19,13 +19,15 @@ import com.evilsoulm.keep_nice.ui.view.activity.WebViewActivity;
  */
 public class WebViewPresenter extends BaseRxPresenter<WebViewActivity> {
 
-    public void setWebViewSettings(WebView webView, String url) {
-        WebSettings settings = webView.getSettings();
+    public void setWebViewSettings(com.tencent.smtt.sdk.WebView webView, String url) {
+        com.tencent.smtt.sdk.WebSettings settings = webView.getSettings();
         settings.setJavaScriptEnabled(true);
         settings.setLoadWithOverviewMode(true);
         settings.setAppCacheEnabled(true);
+        settings.setDatabaseEnabled(true);
         settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
         settings.setSupportZoom(true);
+        settings.setBlockNetworkImage(true);
         webView.setWebChromeClient(new ChromeClient());
         webView.setWebViewClient(new KeepWebViewClient());
         webView.loadUrl(url);
@@ -82,6 +84,12 @@ public class WebViewPresenter extends BaseRxPresenter<WebViewActivity> {
         public boolean shouldOverrideUrlLoading(WebView view, String url) {
             if (url != null) view.loadUrl(url);
             return true;
+        }
+
+        @Override
+        public void onPageFinished(WebView view, String url) {
+            super.onPageFinished(view, url);
+            view.getSettings().setBlockNetworkImage(false);
         }
     }
 }

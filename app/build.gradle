@@ -62,7 +62,7 @@ dependencies {
     compile project(':common')
     compile project(':domain')
     compile project(':library')
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     compile rootProject.ext.app_dep.appcompat_v7
     compile rootProject.ext.app_dep.design
     compile rootProject.ext.app_dep.okio
@@ -76,7 +76,6 @@ dependencies {
     compile rootProject.ext.app_dep.logansquare
     apt rootProject.ext.app_dep.apt_dagger
     compile rootProject.ext.app_dep.dagger
-
     compile 'info.android15.nucleus:nucleus:2.0.1'
     compile 'info.android15.nucleus:nucleus-support-v7:2.0.1'
     compile 'info.android15.nucleus:nucleus-support-v4:2.0.1'
@@ -91,6 +90,7 @@ dependencies {
     compile 'cn.bingoogolapple:bga-badgeview:1.1.1@aar'
     compile 'com.daimajia.numberprogressbar:library:1.2@aar'
     compile 'com.google.android:flexbox:0.1.2'
+    compile files('libs/tbs_sdk_thirdapp_v2.1.2.1083_36509_withdownload_obfs_20160623_110845.jar')
 }
 
 

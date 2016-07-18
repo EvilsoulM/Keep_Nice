@@ -16,8 +16,13 @@
         app:progress_text_visibility="invisible"
         app:progress_unreached_bar_height="2dp" />
 
-    <WebView
+    <com.tencent.smtt.sdk.WebView
         android:id="@+id/web_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <View
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
 </LinearLayout>
