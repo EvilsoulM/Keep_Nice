@@ -15,4 +15,6 @@ public abstract class ILogin {
     }
 
     public abstract void login(String name, String pass);
+
+    public abstract String getName();
 }

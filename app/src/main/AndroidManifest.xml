@@ -36,6 +36,9 @@
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity android:name=".ui.view.activity.FlexBoxLayoutActivity" />
         <activity android:name=".mvc.LoginActivity">
+
+        </activity>
+        <activity android:name=".mvc.NewLoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

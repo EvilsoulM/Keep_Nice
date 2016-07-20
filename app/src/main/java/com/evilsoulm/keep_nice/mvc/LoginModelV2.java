@@ -18,8 +18,14 @@ public class LoginModelV2 extends ILogin {
     public void login(String name, String pass) {
         if (TextUtils.isEmpty(name) || TextUtils.isEmpty(pass)) {
             callBack.loginSuc();
+            //request/
         } else {
             callBack.loginFail();
         }
+    }
+
+    @Override
+    public String getName() {
+        return "LoginModelV2";
     }
 }

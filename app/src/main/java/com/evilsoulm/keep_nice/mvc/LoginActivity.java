@@ -22,6 +22,7 @@ public class LoginActivity extends Activity implements LoginView.ILoginView, Log
         setContentView(loginView.getViewXml());
         loginView.initView();
         model = new LoginModel(this);
+        loginView.setName(model.getName());
     }
 
     @Override

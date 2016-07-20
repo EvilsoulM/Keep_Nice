@@ -24,4 +24,10 @@ public class LoginModel extends ILogin {
         }
     }
 
+    @Override
+    public String getName() {
+        return "LoginModel";
+    }
+
+
 }

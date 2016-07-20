@@ -41,6 +41,13 @@ public class LoginView {
         btnLogin.setOnClickListener(onLoginBtnClick);
     }
 
+    public void setName(String name) {
+        txtName.setText(name);
+    }
+
+    public void setPass(String pass) {
+        txtPass.setText(pass);
+    }
 
     public interface ILoginView {
         void login(String name, String pass);
