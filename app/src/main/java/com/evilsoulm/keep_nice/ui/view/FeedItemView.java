@@ -42,9 +42,9 @@ public class FeedItemView extends BaseAdapterItemView<Feed> {
 //        }
 
         topicContentView.showTextBadge("0");
-        titleView.setText(feed.getDesc());
+        titleView.setText(feed.desc.get());
 
-        descriptionView.setText(feed.getPublishedAt());
+        descriptionView.setText(feed.publishedAt.get());
 
         topicContentView.setOnClickListener(v -> notifyItemAction(ClickType.CLICK_TYPE_TOPIC_CLICKED));
 

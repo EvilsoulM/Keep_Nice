@@ -38,25 +38,25 @@ public class BindViewActivity extends AppCompatActivity {
         activityBindViewBinding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                feed.set_id("new Id");
-                feed.setCreatedAt("new CreatedAt");
-                feed.setDesc("new desc");
-                feed.setPublishedAt("new PublishedAt");
-                feed.setSource("new source");
-                feed.setType("new type");
-                feed.setUrl("new url");
-                feed.setWho("new who");
+                feed._id.set("new Id");
+                feed.createdAt.set("new CreatedAt");
+                feed.desc.set("new desc");
+                feed.publishedAt.set("new PublishedAt");
+                feed.source.set("new source");
+                feed.type.set("new type");
+                feed.url.set("new url");
+                feed.who.set("new who");
             }
         });
         feed = new Feed();
-        feed.set_id("id");
-        feed.setCreatedAt("CreatedAt");
-        feed.setDesc("desc");
-        feed.setPublishedAt("PublishedAt");
-        feed.setSource("source");
-        feed.setType("type");
-        feed.setUrl("url");
-        feed.setWho("who");
+        feed._id.set("id");
+        feed.createdAt.set("CreatedAt");
+        feed.desc.set("desc");
+        feed.publishedAt.set("PublishedAt");
+        feed.source.set("source");
+        feed.type.set("type");
+        feed.url.set("url");
+        feed.who.set("who");
         activityBindViewBinding.setFeed(feed);
     }
 
