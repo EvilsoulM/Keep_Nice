@@ -14,4 +14,5 @@ dependencies {
     compile rootProject.ext.app_dep.rxjava
     compile rootProject.ext.app_dep.rxandroid
     compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.android.databinding:library:1.1'
 }

@@ -22,4 +22,5 @@
     <string name="action_open_in_browser">打开链接</string>
     <string name="action_refresh">刷新页面</string>
     <string name="action_more_operation">更多操作</string>
+    <string name="title_activity_bind_view">BindViewActivity</string>
 </resources>

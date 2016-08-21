@@ -56,6 +56,7 @@ android {
         ddebug {
         }
     }
+    dataBinding.enabled = true
 }
 
 dependencies {
@@ -91,6 +92,7 @@ dependencies {
     compile 'com.daimajia.numberprogressbar:library:1.2@aar'
     compile 'com.google.android:flexbox:0.1.2'
     compile files('libs/tbs_sdk_thirdapp_v2.1.2.1083_36509_withdownload_obfs_20160623_110845.jar')
+    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha1'
 }
 
 

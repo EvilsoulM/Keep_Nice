@@ -1,5 +1,6 @@
 package com.evilsoulm.keep_nice.dl.modules;
 
+
 import com.evilsoulm.keep_nice.domain.base.FeedDataPrvdr;
 
 import javax.inject.Singleton;

@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 
 import com.evilsoulm.keep_nice.model.dao.entity.Feed;
+import com.evilsoulm.keep_nice.ui.view.activity.BindViewActivity;
 import com.evilsoulm.keep_nice.ui.view.activity.FlexBoxLayoutActivity;
-import com.evilsoulm.keep_nice.ui.view.activity.WebViewActivity;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -18,8 +18,10 @@ public class Navigator {
     }
 
     public void navigatorToWebView(@NonNull Context context, Feed feed) {
-        Intent intentToLaunch = WebViewActivity.getCallingIntent(context, feed);
-        context.startActivity(intentToLaunch);
+//        Intent intentToLaunch = WebViewActivity.getCallingIntent(context, feed);
+//        context.startActivity(intentToLaunch);
+        Intent intent = new Intent(context, BindViewActivity.class);
+        context.startActivity(intent);
     }
 
 
