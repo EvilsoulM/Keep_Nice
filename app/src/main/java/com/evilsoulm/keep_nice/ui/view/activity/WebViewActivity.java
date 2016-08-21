@@ -45,8 +45,8 @@ public class WebViewActivity extends BaseActivity<WebViewPresenter> implements I
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         feed = (Feed) getIntent().getSerializableExtra(BUNDLE_FEED);
-        getPresenter().setWebViewSettings(webView, feed.url.get());
-        setWebTitle(feed.desc.get());
+        getPresenter().setWebViewSettings(webView, feed.getUrl());
+        setWebTitle(feed.getDesc());
     }
 
     @Override

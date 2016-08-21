@@ -1,7 +1,5 @@
 package com.evilsoulm.keep_nice.model.dao.entity;
 
-import android.databinding.ObservableField;
-
 import java.io.Serializable;
 
 /**
@@ -17,14 +15,85 @@ import java.io.Serializable;
  * debug	当前提交为测试数据	如果想要测试数据是否合法, 请设置 debug 为 true! 可选参数: true | false
  */
 public class Feed implements Serializable {
-    public ObservableField<String> _id = new ObservableField<>();
-    public ObservableField<String> createdAt = new ObservableField<>();
-    public ObservableField<String> desc = new ObservableField<>();
-    public ObservableField<String> publishedAt = new ObservableField<>();
-    public ObservableField<String> source = new ObservableField<>();
-    public ObservableField<String> type = new ObservableField<>();
-    public ObservableField<String> url = new ObservableField<>();
-    public ObservableField<String> who = new ObservableField<>();
-    public boolean used;
+    private String _id;
+    private String createdAt;
+    private String desc;
+    private String publishedAt;
+    private String source;
+    private String type;
+    private String url;
+    private boolean used;
+    private String who;
 
+    public String get_id() {
+        return _id;
+    }
+
+    public void set_id(String _id) {
+        this._id = _id;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getPublishedAt() {
+        return publishedAt;
+    }
+
+    public void setPublishedAt(String publishedAt) {
+        this.publishedAt = publishedAt;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public boolean isUsed() {
+        return used;
+    }
+
+    public void setUsed(boolean used) {
+        this.used = used;
+    }
+
+    public String getWho() {
+        return who;
+    }
+
+    public void setWho(String who) {
+        this.who = who;
+    }
 }
