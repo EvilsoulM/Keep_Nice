@@ -4,15 +4,19 @@ apply from: rootProject.file('basegradle/commonProject.gradle')
 apply from: rootProject.file('basegradle/commonAndroid.gradle')
 apply plugin: 'me.tatarka.retrolambda'
 apply from: file('plugin.gradle')
+apply plugin: 'resourceplugin'
 
 buildscript {
     repositories {
+        maven {//本地Maven仓库地址
+            url uri('/Users/mazixuan/Documents/android')
+        }
         mavenCentral()
     }
-
     dependencies {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'org.aspectj:aspectjtools:1.8.1'
+        classpath 'com.example.resourceplugin:resourceplugin:1.0.5'
     }
 }
 
@@ -77,6 +81,7 @@ dependencies {
     compile rootProject.ext.app_dep.logansquare
     apt rootProject.ext.app_dep.apt_dagger
     compile rootProject.ext.app_dep.dagger
+    compile 'com.android.support:support-core-ui:24.2.0'
     compile 'info.android15.nucleus:nucleus:2.0.1'
     compile 'info.android15.nucleus:nucleus-support-v7:2.0.1'
     compile 'info.android15.nucleus:nucleus-support-v4:2.0.1'
@@ -142,4 +147,10 @@ variants.all { variant ->
             }
         }
     }
+}
+
+resourcePlugin {
+    mipmap true
+    drawable true
+    version "1.0.1"
 }

@@ -3,7 +3,7 @@ ext {
             compileSdk : 23,
             minSdk     : 16,
             targetSdk  : 23,
-            support    : "23.1.1",
+            support    : "24.2.0",
             buildTools : "23.0.2",
             packageName: "com.evilsoulm.keep_nice"
     ]

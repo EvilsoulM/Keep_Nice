@@ -1,0 +1,36 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    //gradle sdk
+    compile gradleApi()
+    //groovy sdk
+    compile localGroovy()
+    compile files('libs/proguard.jar')
+}
+repositories {
+    mavenCentral()
+}
+
+compileGroovy {
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+    options.encoding = "UTF-8"
+}
+
+//group和version在后面使用自定义插件的时候会用到
+group = 'com.example.resourceplugin'
+version = '1.0.5'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            //提交到远程服务器：
+            // repository(url: "http://www.xxx.com/repos") {
+            //    authentication(userName: "admin", password: "admin")
+            // }
+            //本地的Maven地址设置为D:/repos
+            repository(url: uri('/Users/mazixuan/Documents/android'))
+        }
+    }
+}

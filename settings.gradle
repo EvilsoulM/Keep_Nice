@@ -1,1 +1,1 @@
-include ':app', ':common', ':model', ':modeldaogenerator', ':domain', ':library'
+include ':app', ':common', ':model', ':modeldaogenerator', ':domain', ':library', ":resourceplugin"
